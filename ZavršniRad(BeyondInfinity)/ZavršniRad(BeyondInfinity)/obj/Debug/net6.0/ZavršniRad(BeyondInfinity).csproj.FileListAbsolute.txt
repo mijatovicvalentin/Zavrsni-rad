@@ -1,0 +1,15 @@
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\bin\Debug\net6.0\ZavršniRad(BeyondInfinity).exe
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\bin\Debug\net6.0\ZavršniRad(BeyondInfinity).deps.json
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\bin\Debug\net6.0\ZavršniRad(BeyondInfinity).runtimeconfig.json
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\bin\Debug\net6.0\ZavršniRad(BeyondInfinity).dll
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\bin\Debug\net6.0\ZavršniRad(BeyondInfinity).pdb
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\obj\Debug\net6.0\ZavršniRad(BeyondInfinity).csproj.AssemblyReference.cache
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\obj\Debug\net6.0\ZavršniRad(BeyondInfinity).GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\obj\Debug\net6.0\ZavršniRad(BeyondInfinity).AssemblyInfoInputs.cache
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\obj\Debug\net6.0\ZavršniRad(BeyondInfinity).AssemblyInfo.cs
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\obj\Debug\net6.0\ZavršniRad(BeyondInfinity).csproj.CoreCompileInputs.cache
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\obj\Debug\net6.0\ZavršniRad(BeyondInfinity).dll
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\obj\Debug\net6.0\refint\ZavršniRad(BeyondInfinity).dll
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\obj\Debug\net6.0\ZavršniRad(BeyondInfinity).pdb
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\obj\Debug\net6.0\ZavršniRad(BeyondInfinity).genruntimeconfig.cache
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity)\obj\Debug\net6.0\ref\ZavršniRad(BeyondInfinity).dll

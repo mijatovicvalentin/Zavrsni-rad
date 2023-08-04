@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZavršniRad(BeyondInfinity)", "ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity).csproj", "{7B430989-15E5-43FB-9F2F-6C8B70C1A016}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B430989-15E5-43FB-9F2F-6C8B70C1A016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B430989-15E5-43FB-9F2F-6C8B70C1A016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B430989-15E5-43FB-9F2F-6C8B70C1A016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B430989-15E5-43FB-9F2F-6C8B70C1A016}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FD3818B-DA0C-4FB8-B046-9DA0C13500AC}
+	EndGlobalSection
+EndGlobal
