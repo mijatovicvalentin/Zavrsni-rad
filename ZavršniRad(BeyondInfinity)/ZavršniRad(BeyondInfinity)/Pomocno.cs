@@ -9,26 +9,26 @@ namespace ZavršniRad_BeyondInfinity_
 {
     internal class Pomocno
     {
-    
+
         public static int UcitajBrojRaspona(string poruka, string greška, int pocetak, int kraj)
         {
             int b;
-            while(true) 
+            while (true)
             {
 
                 Console.Write(poruka);
                 try
                 {
                     b = int.Parse(Console.ReadLine());
-                    if(b >= pocetak && b <= kraj)
+                    if (b >= pocetak && b <= kraj)
                     {
                         return b;
                     }
                     Console.WriteLine(greška);
                     {
-                     
+
                     }
-                    
+
                 }
                 catch
                 {
@@ -45,13 +45,13 @@ namespace ZavršniRad_BeyondInfinity_
         {
 
             int b;
-            while(true)
+            while (true)
             {
                 Console.Write(poruka);
                 try
                 {
                     b = int.Parse(Console.ReadLine());
-                    if(b > 0 )
+                    if (b > 0)
                     {
                         return b;
                     }
@@ -79,13 +79,13 @@ namespace ZavršniRad_BeyondInfinity_
         internal static decimal UcitajDecimalniBroj(string poruka, string greška)
         {
             decimal z;
-            while(true)
+            while (true)
             {
                 Console.Write(poruka);
                 try
                 {
                     z = decimal.Parse(Console.ReadLine());
-                    if(z > 0 )
+                    if (z > 0)
                     {
                         return z;
                     }
@@ -99,15 +99,15 @@ namespace ZavršniRad_BeyondInfinity_
 
         }
 
-        internal static string UcitajString(string poruka   , string greška)
+        internal static string UcitajString(string poruka, string greška)
         {
 
             string q = "";
-            while(true)
+            while (true)
             {
                 Console.Write(poruka);
                 q = Console.ReadLine();
-                if(q!=null && q.Trim().Length > 0)
+                if (q != null && q.Trim().Length > 0)
                 {
                     return q;
                 }
@@ -116,4 +116,5 @@ namespace ZavršniRad_BeyondInfinity_
             }
         }
     }
+
 }

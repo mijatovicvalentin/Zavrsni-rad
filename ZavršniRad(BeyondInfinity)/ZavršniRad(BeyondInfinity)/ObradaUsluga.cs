@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZavršniRad_BeyondInfinity_;
 
 namespace ZavršniRad_BeyondInfinity_
 {
@@ -14,6 +15,7 @@ namespace ZavršniRad_BeyondInfinity_
         public ObradaUsluga()
         {
             Usluge = new List<Usluga>();
+            TestniPodaci();
 
 
         }
@@ -45,7 +47,13 @@ namespace ZavršniRad_BeyondInfinity_
                 case 3:
                     PromjenaPostojećegSmjera();
                     PrikaziteIzbornik();
-                     break;
+                    break;
+
+
+                case 4:
+                    BrisanjeUsluge();
+                    PrikaziteIzbornik();
+                    break;
 
 
 
@@ -58,9 +66,39 @@ namespace ZavršniRad_BeyondInfinity_
             }
         }
 
+        private void BrisanjeUsluge()
+        {
+            int broj = Pomocno.UcitajBrojRaspona("Molimo odaberite redni broj usluge za promjenu:",
+               "Ponovite !", 1, Usluge.Count());
+            Usluge.RemoveAt(broj - 1);
+
+           
+
+        }
+
         private void PromjenaPostojećegSmjera()
         {
-            throw new NotImplementedException();
+            PrikaziUsluge();
+
+            int broj = Pomocno.UcitajBrojRaspona("Molimo odaberite redni broj usluge za promjenu:",
+                "Ponovite !", 1, Usluge.Count());
+            var usl = Usluge[broj - 1];
+
+            usl.id = Pomocno.UcitajCijeliBroj("Molimo da unesete id usluge" +
+                " (" + usl.id + "): ", "Nije dobro !");
+            usl.Naziv = Pomocno.UcitajString("Molimo da unesete naziv usluge: (" + usl.Naziv + "): ",
+                "Obavezan unos usluge");
+            usl.Destinacija = Pomocno.UcitajString("Molimo da unesete destinaciju usluge: (" + usl.Destinacija +"):  ",
+                "Obavezna unos destiancije usluge");
+            usl.NacinPlacanja = Pomocno.UcitajBrojRaspona("Molimo da unesete način plaćanja usluge: (" + usl.NacinPlacanja + "): "
+                , "Način plaćanja mora biti 1 ili 2!" +
+                "1 - Kartično 2 - Fizičko", 1, 2);   
+            usl.Cijena = Pomocno.UcitajDecimalniBroj("Molimo da unesete cijenu usluge: (" + usl.Cijena + "):  "
+                , "Decimalni unos obavezan");
+            usl.BrojMjesta = Pomocno.UcitajCijeliBroj("Molimo da unesete broj sjedala za uslugu: (" + usl.BrojMjesta + "): ",
+                "Ponovite unos broja sjedala ");
+
+            Console.WriteLine("--------------------------------------");
         }
 
         private void UnosNoveUsluge()
@@ -71,41 +109,53 @@ namespace ZavršniRad_BeyondInfinity_
                 "Unos mora biti pozitivni cijeli broj");
             usl.Naziv = Pomocno.UcitajString("Molimo da unesete naziv usluge:  ",
                 "Obavezan unos usluge");
-            usl.Destinacija = Pomocno.UcitajString("Molimo da unesete destinaciju usluge:  ", 
+            usl.Destinacija = Pomocno.UcitajString("Molimo da unesete destinaciju usluge:  ",
                 "Obavezna unos destiancije usluge");
             usl.NacinPlacanja = Pomocno.UcitajBrojRaspona("Molimo da unesete način plaćanja usluge:  "
                 , "Način plaćanja mora biti 1 ili 2!" +
-                "1 - Kartično 2 - Fizičko",1 , 2 );
+                "1 - Kartično 2 - Fizičko", 1, 2);
             usl.Cijena = Pomocno.UcitajDecimalniBroj("Molimo da unesete cijenu usluge:  "
                 , "Decimalni unos obavezan");
             usl.BrojMjesta = Pomocno.UcitajCijeliBroj("Molimo da unesete broj sjedala za uslugu:  ",
                 "Ponovite unos broja sjedala ");
-           Usluge.Add(usl);
-                
-        }   
+            Usluge.Add(usl);
 
-    
+        }
+
+
 
 
 
         private void PrikaziUsluge()
         {
-            Console.WriteLine("_____________________________|");
+            Console.WriteLine();
+            Console.WriteLine("---------Dostupne usluge-------");
+            Console.WriteLine("-------------------------------");
             foreach (Usluga u in Usluge)
-            
-
             {
-                Console.WriteLine("Id : {0}" , u.id) ;
-                Console.WriteLine("Naziv: {0}" , u.Naziv);
-                Console.WriteLine("Destinacija {0}" , u.Destinacija);
-                Console.WriteLine("Nacin plaćanja {0}" , u.NacinPlacanja);
-                Console.WriteLine("Cijena {0}" , u.Cijena);
-                Console.WriteLine("Broj Sjedala {0}" , u.BrojMjesta);
-                Console.WriteLine("_____________________________|");
+                Console.WriteLine("Id \t{0}. :",   u.id);
+                Console.WriteLine("Naziv\t{0}. ",  u.Naziv);
+                Console.WriteLine("Destinacija \t{0}. ", u.Destinacija);
+                Console.WriteLine("Nacin plaćanja \t{0}.",  u.NacinPlacanja);
+                Console.WriteLine("Cijena \t{0}. " , u.Cijena);
+                Console.WriteLine("Broj Sjedala \t{0}. "  ,  u.BrojMjesta);
+                Console.WriteLine("----------------------------");
 
             }
+            Console.WriteLine("--------------------------------");
 
+        }
+
+
+        private void TestniPodaci()
+        {
+            Usluge.Add(new Usluga() { Naziv = "ProximaB" });
+            Usluge.Add(new Usluga() { Naziv = "ProximaZ" });
         }
     }
 
-} 
+ 
+}
+
+
+
