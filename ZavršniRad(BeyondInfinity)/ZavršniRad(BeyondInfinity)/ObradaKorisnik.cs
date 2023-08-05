@@ -27,11 +27,14 @@ namespace ZavršniRad_BeyondInfinity_
             Console.WriteLine(" --------------------------------------------- ");
             Console.WriteLine(" Nalazite se u izborniku za rad sa korisnicima ");
             Console.WriteLine(" --------------------------------------------- ");
-            Console.WriteLine("1. Pregled postojećih korisnika");
-            Console.WriteLine("2. Unos novog korinsika");
-            Console.WriteLine("3. Promjena postojećeg korinsika");
-            Console.WriteLine("4. Brisanje postojećeg kornisnika");
-            Console.WriteLine("5. Povratak u glavni izbornik");
+            Console.WriteLine("\t 1. Pregled postojećih korisnika");
+            Console.WriteLine("\t 2. Unos novog korinsika");
+            Console.WriteLine("\t 3. Promjena postojećeg korinsika");
+            Console.WriteLine("\t 4. Brisanje postojećeg korisnika");
+            Console.WriteLine("\t 5. Povratak u glavni izbornik");
+            Console.WriteLine("--------------------------------------------------------------|");
+
+
             switch (Pomocno.UcitajBrojRaspona("Molimo odaberite stavku izbornika Korisnici: ", "Pokušajte ponovno uz odabir od 1 - 5 ", 1, 5))
             {
 
@@ -63,7 +66,7 @@ namespace ZavršniRad_BeyondInfinity_
 
 
                 case 5:
-                    Console.WriteLine("Gotov rad sa uslugama");
+                    Console.WriteLine("\nGotov rad sa korisnicima !\n");
                     break;
 
 
@@ -144,7 +147,6 @@ namespace ZavršniRad_BeyondInfinity_
                 Console.WriteLine("----------------------------");
 
             }
-            Console.WriteLine("--------------------------------");
 
         }
 

@@ -11,6 +11,7 @@ namespace ZavršniRad_BeyondInfinity_
 
         private ObradaUsluga ObradaUsluga;
         private ObradaKorisnik ObradaKorisnik;
+        private ObradaDjelatnik ObradaDjelatnik;
 
 
 
@@ -19,6 +20,7 @@ namespace ZavršniRad_BeyondInfinity_
         {
             ObradaKorisnik = new ObradaKorisnik();
             ObradaUsluga = new ObradaUsluga();
+            ObradaDjelatnik = new ObradaDjelatnik();    
             PorukaPozdrava();
             PrikaziteIzbornik();        
         }
@@ -30,18 +32,21 @@ namespace ZavršniRad_BeyondInfinity_
             Console.WriteLine("|------------------------------------------------------------|");
             Console.WriteLine("|>>>>>>>>>>>>>>> Beyond Infinity Console App <<<<<<<<<<<<<<<<|");
             Console.WriteLine("|------------------------------------------------------------|");
-
+            Console.WriteLine();
+            Console.WriteLine();
         }
 
 
         private void PrikaziteIzbornik()
         {
-            Console.WriteLine("Dobrodođli u glavni izbornik Konzolne aplikacije BeyondInfinity  ^°^° ");
+            Console.WriteLine("Glavni izbornik Konzolne aplikacije BeyondInfinity  ^°^°^°^°^° ");
+            Console.WriteLine("----------------------");
             Console.WriteLine("1. Usluge");
             Console.WriteLine("2. Korisnici");
             Console.WriteLine("3. Vozila");    
             Console.WriteLine("4. Djelatnici");
             Console.WriteLine("5. izlaz iz aplikacije");
+            Console.WriteLine("--------------------------------------------------------------|");
             switch (Pomocno.UcitajBrojRaspona("Molimo odaberite stavku izbornika:  ", "Pokušajte ponovno uz odabir od 1 - 5 ", 1, 5))
             {
                 case 1:
@@ -55,7 +60,7 @@ namespace ZavršniRad_BeyondInfinity_
                     break;
 
                 case 3:
-                    Console.WriteLine("Za rad sa korisnicima");
+                    ObradaDjelatnik.PrikaziteIzbornik();
                     PrikaziteIzbornik();
                     break;
 

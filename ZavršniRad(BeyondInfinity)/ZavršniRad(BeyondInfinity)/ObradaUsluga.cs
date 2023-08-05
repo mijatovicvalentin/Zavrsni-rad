@@ -25,11 +25,13 @@ namespace ZavršniRad_BeyondInfinity_
             Console.WriteLine(" ------------------------------------------ ");
             Console.WriteLine(" Nalazite se u izborniku za rad sa uslugama ");
             Console.WriteLine(" ------------------------------------------ ");
-            Console.WriteLine("1. Pregled postojećih usluga");
-            Console.WriteLine("2. Unos nove usluga");
-            Console.WriteLine("3. Promjena postojeće usluge");
-            Console.WriteLine("4. Brisanje postojeće usluge");
-            Console.WriteLine("5. Povratak u glavni izbornik");
+            Console.WriteLine("\t 1. Pregled postojećih usluga");
+            Console.WriteLine("\t 2. Unos nove usluga");
+            Console.WriteLine("\t 3. Promjena postojeće usluge");
+            Console.WriteLine("\t 4. Brisanje postojeće usluge");
+            Console.WriteLine("\t 5. Povratak u glavni izbornik");
+            Console.WriteLine("--------------------------------------------------------------|");
+
             switch (Pomocno.UcitajBrojRaspona("Molimo odaberite stavku izbornika usluge: ", "Pokušajte ponovno uz odabir od 1 - 5 ", 1, 5))
             {
 
@@ -37,7 +39,6 @@ namespace ZavršniRad_BeyondInfinity_
                     PrikaziUsluge();
                     PrikaziteIzbornik();
                     break;
-
 
                 case 2:
                     UnosNoveUsluge();
@@ -61,7 +62,7 @@ namespace ZavršniRad_BeyondInfinity_
 
 
                 case 5:
-                    Console.WriteLine("Gotov rad sa uslugama");
+                    Console.WriteLine("\nGotov rad sa uslugama !\n");
                     break;
 
 

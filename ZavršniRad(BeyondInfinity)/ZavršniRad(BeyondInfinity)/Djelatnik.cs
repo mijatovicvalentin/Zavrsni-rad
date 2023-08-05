@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZavršniRad_BeyondInfinity_
 {
-    internal class Djelatnik
+    internal class Djelatnik : Povezivanje
     {
 
 
@@ -15,7 +15,7 @@ namespace ZavršniRad_BeyondInfinity_
         public int Oib { get; set; }
         public string Kontakt { get; set; }
         public int JedinstveniBroj { get; set; }
-        public string VrstDjelatnika { get; set; }
+        public string VrsteDjelatnika { get; set; }
     
     }
 }
