@@ -73,9 +73,7 @@ namespace ZavršniRad_BeyondInfinity_
 
         {
 
-            Console.WriteLine("-------------------------------------------");
-            Console.WriteLine(">>>>>>>Izaberite stavku za brisanje<<<<<<<<");
-            Console.WriteLine("-------------------------------------------");
+           
 
             int broj = Pomocno.UcitajBrojRaspona("Molimo odaberite redni broj usluge za brisanje:",
                "Ponovite, ne valja !", 1, Usluge.Count());

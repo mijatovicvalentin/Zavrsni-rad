@@ -10,11 +10,14 @@ namespace ZavršniRad_BeyondInfinity_
     {
 
         private ObradaUsluga ObradaUsluga;
+        private ObradaKorisnik ObradaKorisnik;
 
 
 
         public Izbornik()
+            
         {
+            ObradaKorisnik = new ObradaKorisnik();
             ObradaUsluga = new ObradaUsluga();
             PorukaPozdrava();
             PrikaziteIzbornik();        
@@ -35,8 +38,8 @@ namespace ZavršniRad_BeyondInfinity_
         {
             Console.WriteLine("Dobrodođli u glavni izbornik Konzolne aplikacije BeyondInfinity  ^°^° ");
             Console.WriteLine("1. Usluge");
-            Console.WriteLine("2. Vozila");
-            Console.WriteLine("3. Korisnici");
+            Console.WriteLine("2. Korisnici");
+            Console.WriteLine("3. Vozila");    
             Console.WriteLine("4. Djelatnici");
             Console.WriteLine("5. izlaz iz aplikacije");
             switch (Pomocno.UcitajBrojRaspona("Molimo odaberite stavku izbornika:  ", "Pokušajte ponovno uz odabir od 1 - 5 ", 1, 5))
@@ -47,7 +50,7 @@ namespace ZavršniRad_BeyondInfinity_
                     break;
 
                 case 2:
-                    Console.WriteLine("Za rad sa vozilima");
+                    ObradaKorisnik.PrikaziteIzbornik();
                     PrikaziteIzbornik();
                     break;
 
