@@ -51,10 +51,13 @@ namespace ZavršniRad_BeyondInfinity_
 
 
                 case 4:
+                    if(Usluge.Count == 0)
+                    {
+                        Console.WriteLine("Nema smjerova za brisanje !");
+                    }
                     BrisanjeUsluge();
                     PrikaziteIzbornik();
                     break;
-
 
 
                 case 5:
@@ -67,9 +70,15 @@ namespace ZavršniRad_BeyondInfinity_
         }
 
         private void BrisanjeUsluge()
+
         {
-            int broj = Pomocno.UcitajBrojRaspona("Molimo odaberite redni broj usluge za promjenu:",
-               "Ponovite !", 1, Usluge.Count());
+
+            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine(">>>>>>>Izaberite stavku za brisanje<<<<<<<<");
+            Console.WriteLine("-------------------------------------------");
+
+            int broj = Pomocno.UcitajBrojRaspona("Molimo odaberite redni broj usluge za brisanje:",
+               "Ponovite, ne valja !", 1, Usluge.Count());
             Usluge.RemoveAt(broj - 1);
 
            
@@ -98,7 +107,6 @@ namespace ZavršniRad_BeyondInfinity_
             usl.BrojMjesta = Pomocno.UcitajCijeliBroj("Molimo da unesete broj sjedala za uslugu: (" + usl.BrojMjesta + "): ",
                 "Ponovite unos broja sjedala ");
 
-            Console.WriteLine("--------------------------------------");
         }
 
         private void UnosNoveUsluge()
@@ -151,6 +159,8 @@ namespace ZavršniRad_BeyondInfinity_
         {
             Usluge.Add(new Usluga() { Naziv = "ProximaB" });
             Usluge.Add(new Usluga() { Naziv = "ProximaZ" });
+            Usluge.Add(new Usluga() { Naziv = "ProximaK" });
+
         }
     }
 
