@@ -15,7 +15,13 @@ namespace ZavršniRad_BeyondInfinity_
         public ObradaUsluga()
         {
             Usluge = new List<Usluga>();
-            TestniPodaci();
+            if(Pomocno.DEV)
+            {
+                TestniPodaci();
+
+            }
+
+
 
 
         }
@@ -52,11 +58,14 @@ namespace ZavršniRad_BeyondInfinity_
 
 
                 case 4:
-                    if(Usluge.Count == 0)
+                    if (Usluge.Count == 0)
                     {
                         Console.WriteLine("Nema smjerova za brisanje !");
                     }
-                    BrisanjeUsluge();
+                    else
+                    {
+                        BrisanjeUsluge();
+                    }
                     PrikaziteIzbornik();
                     break;
 

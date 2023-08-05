@@ -17,7 +17,11 @@ namespace ZavršniRad_BeyondInfinity_
         public ObradaKorisnik()
         {
             Korisnici = new List<Korisnik>();
+            if(Pomocno.DEV)
+            {
             TestniPodaci();
+
+            }
 
 
         }
@@ -60,7 +64,10 @@ namespace ZavršniRad_BeyondInfinity_
                     {
                         Console.WriteLine("Nema smjerova za brisanje !");
                     }
-                    BrisanjeKorisnika();
+                    else
+                    {
+                        BrisanjeKorisnika();
+                    }
                     PrikaziteIzbornik();
                     break;
 
@@ -136,7 +143,7 @@ namespace ZavršniRad_BeyondInfinity_
         {
             Console.WriteLine();
             Console.WriteLine("---------Dostupni korisnici-------");
-            Console.WriteLine("-------------------------------");
+            Console.WriteLine("----------------------------------");
             foreach(Korisnik k in Korisnici)
             {
                 Console.WriteLine("Id: {0}  ", k.id);

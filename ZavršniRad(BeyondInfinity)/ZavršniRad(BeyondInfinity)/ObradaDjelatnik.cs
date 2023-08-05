@@ -15,7 +15,11 @@ namespace ZavršniRad_BeyondInfinity_
         public ObradaDjelatnik()
         {
             Djelatnici = new List<Djelatnik>();
-            TestniPodaci();
+            if(Pomocno.DEV)
+            {
+                TestniPodaci();
+            }
+
 
 
         }
@@ -48,6 +52,10 @@ namespace ZavršniRad_BeyondInfinity_
                     break;
 
                 case 3:
+                    if (Djelatnici.Count == 0)
+                    {
+                        Console.WriteLine("Nema smjerova za brisanje !");
+                    }
                     PromjenaPostojećegDjelatnika();
                     PrikaziteIzbornik();
                     break;
@@ -58,7 +66,11 @@ namespace ZavršniRad_BeyondInfinity_
                     {
                         Console.WriteLine("Nema smjerova za brisanje !");
                     }
-                    BrisanjeDjelatnika();
+                    else
+                    {
+                        BrisanjeDjelatnika();
+                    }
+
                     PrikaziteIzbornik();
                     break;
 
@@ -92,24 +104,24 @@ namespace ZavršniRad_BeyondInfinity_
         {
             PrikaziDjelatnike();
 
-            int broj = Pomocno.UcitajBrojRaspona("Molimo odaberite redni broj korisnika za promjenu:",
+            int broj = Pomocno.UcitajBrojRaspona("Molimo odaberite redni broj djelatnika za promjenu:",
                 "Ponovite !", 1, Djelatnici.Count());
             var dje = Djelatnici[broj - 1];
 
-            dje.id = Pomocno.UcitajCijeliBroj("Molimo da unesete id korisnika" +
+            dje.id = Pomocno.UcitajCijeliBroj("Molimo da unesete id djelatnika" +
                 " (" + dje.id + "): ", "Nije dobro !");
-            dje.Ime = Pomocno.UcitajString("Molimo da unesete ime korisnika: (" + dje.Ime + "): ",
+            dje.Ime = Pomocno.UcitajString("Molimo da unesete ime djelatnika: (" + dje.Ime + "): ",
                 "Obavezan unos usluge");
-            dje.Prezime = Pomocno.UcitajString("Molimo da unesete prezime korisnika: (" + dje.Prezime + "):  ",
+            dje.Prezime = Pomocno.UcitajString("Molimo da unesete prezime djelatnika: (" + dje.Prezime + "):  ",
                 "Obavezna unos destiancije usluge");
-            dje.Oib = Pomocno.UcitajCijeliBroj("Molimo da unesete oib korisnika: (" + dje.Oib + "): "
-                , "oib korisnika mora sadržavati 11 brojeva");
-            dje.Kontakt = Pomocno.UcitajString("Molimo da unesete email korisnika: (" + dje.Kontakt + "):  "
+            dje.Oib = Pomocno.UcitajCijeliBroj("Molimo da unesete oib djelatnika:  (" + dje.Oib + "): "
+                , "obavezan unos od 11 brojeva");
+            dje.Kontakt = Pomocno.UcitajCijeliBroj("Molimo da unesete kontakt djelatnika: (" + dje.Kontakt + "):  "
                 , "Decimalni unos obavezan");
-            dje.JedinstveniBroj = Pomocno.UcitajCijeliBroj("Molimo da unesete email korisnika: (" + dje.JedinstveniBroj + "):  "
+            dje.JedinstveniBroj = Pomocno.UcitajCijeliBroj("Molimo da unesete Jedinstveni broj djelatnika: (" + dje.JedinstveniBroj + "):  "
                 , "Decimalni unos obavezan");
-            dje.VrsteDjelatnika = Pomocno.UcitajString("Molimo da unesete email korisnika: (" + dje.VrsteDjelatnika + "):  "
-                    , "Decimalni unos obavezan");
+            dje.VrsteDjelatnika = Pomocno.UcitajString("Molimo da unesete radnu titulu djelatnika: (" + dje.VrsteDjelatnika + "):  "
+                    , " Unos titule obavezan");
 
 
         }
@@ -118,21 +130,20 @@ namespace ZavršniRad_BeyondInfinity_
         {
 
             var dje = new Djelatnik();
-            dje.id = Pomocno.UcitajCijeliBroj("Molimo da unesete id usluge:  ",
+            dje.id = Pomocno.UcitajCijeliBroj("Molimo da unesete id djelatnika:  (" + dje.id + "): ",
                 "Unos mora biti pozitivni cijeli broj");
-            dje.Ime = Pomocno.UcitajString("Molimo da unesete naziv usluge:  ",
-                "Obavezan unos usluge");
-            dje.Prezime = Pomocno.UcitajString("Molimo da unesete destinaciju usluge:  ",
-                "Obavezna unos destiancije usluge");
-            dje.Oib = Pomocno.UcitajBrojRaspona("Molimo da unesete način plaćanja usluge:  "
-                , "Način plaćanja mora biti 1 ili 2!" +
-                "1 - Kartično 2 - Fizičko", 1, 2);
-            dje.Kontakt = Pomocno.UcitajString("Molimo da unesete email korisnika: (" + dje.Kontakt + "):  "
-               , "Decimalni unos obavezan");
-            dje.JedinstveniBroj = Pomocno.UcitajCijeliBroj("Molimo da unesete email korisnika: (" + dje.JedinstveniBroj + "):  "
-               , "Decimalni unos obavezan");
-            dje.VrsteDjelatnika = Pomocno.UcitajString("Molimo da unesete email korisnika: (" + dje.VrsteDjelatnika + "):  "
-               , "Decimalni unos obavezan");
+            dje.Ime = Pomocno.UcitajString("Molimo da unesete naziv djelatnika: (" + dje.Ime + "):  ",
+                "Obavezan unos imena");
+            dje.Prezime = Pomocno.UcitajString("Molimo da unesete prezime djelatnika:  (" + dje.Prezime + "): ",
+                "Obavezna unos prezimena ");
+            dje.Oib = Pomocno.UcitajCijeliBroj("Molimo da unesete oib djelatnika:  (" + dje.Oib + "): "
+                , "obavezan unos od 11 brojeva" );
+            dje.Kontakt = Pomocno.UcitajCijeliBroj("Molimo da unesete kontakt djelatnika: (" + dje.Kontakt + "):  "
+               , "Kontakt broj obavezan");
+            dje.JedinstveniBroj = Pomocno.UcitajCijeliBroj("Molimo da unesete jedinstveni broj djelatnika: (" + dje.JedinstveniBroj + "):  "
+               , "Broj obavezan !");
+            dje.VrsteDjelatnika = Pomocno.UcitajString("Molimo da unesete radnu titulu djelatnika: (" + dje.VrsteDjelatnika + "):  "
+               , "Unos titule riječima obavezan");
 
 
 
@@ -153,11 +164,11 @@ namespace ZavršniRad_BeyondInfinity_
             {
                 Console.WriteLine("Id: {0}  ", d.id);
                 Console.WriteLine("Ime: {0}  ", d.Ime);
-                Console.WriteLine("Prezime: {0} : ", d.Prezime);
+                Console.WriteLine("Prezime: {0}  ", d.Prezime);
                 Console.WriteLine("Oib: {0} ", d.Oib);
-                Console.WriteLine("Email: {0} ", d.Kontakt);
-                Console.WriteLine("Oib: {0} ", d.JedinstveniBroj);
-                Console.WriteLine("Email: {0} ", d.VrsteDjelatnika);
+                Console.WriteLine("Kontakt: {0} ", d.Kontakt);
+                Console.WriteLine("Jedinstveni broj: {0} ", d.JedinstveniBroj);
+                Console.WriteLine("Radna titula: {0} ", d.VrsteDjelatnika);
                 Console.WriteLine("----------------------------");
 
             }

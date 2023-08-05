@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ namespace ZavršniRad_BeyondInfinity_
 {
     internal class Pomocno
     {
+        public static bool DEV;
 
         public static int UcitajBrojRaspona(string poruka, string greška, int pocetak, int kraj)
         {
@@ -98,7 +100,9 @@ namespace ZavršniRad_BeyondInfinity_
             }
 
         }
+       
 
+        
         internal static string UcitajString(string poruka, string greška)
         {
 
@@ -114,6 +118,7 @@ namespace ZavršniRad_BeyondInfinity_
                 Console.WriteLine(greška);
 
             }
+            
         }
     }
 

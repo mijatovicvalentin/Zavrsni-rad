@@ -12,8 +12,8 @@ namespace ZavršniRad_BeyondInfinity_
 
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public int Oib { get; set; }
-        public string Kontakt { get; set; }
+        public Int64 Oib { get; set; }
+        public int Kontakt { get; set; }
         public int JedinstveniBroj { get; set; }
         public string VrsteDjelatnika { get; set; }
     

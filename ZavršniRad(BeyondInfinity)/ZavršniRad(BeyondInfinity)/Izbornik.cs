@@ -43,8 +43,8 @@ namespace ZavršniRad_BeyondInfinity_
             Console.WriteLine("----------------------");
             Console.WriteLine("1. Usluge");
             Console.WriteLine("2. Korisnici");
-            Console.WriteLine("3. Vozila");    
-            Console.WriteLine("4. Djelatnici");
+            Console.WriteLine("3. Djelatnici");
+            Console.WriteLine("4. Vozila");     
             Console.WriteLine("5. izlaz iz aplikacije");
             Console.WriteLine("--------------------------------------------------------------|");
             switch (Pomocno.UcitajBrojRaspona("Molimo odaberite stavku izbornika:  ", "Pokušajte ponovno uz odabir od 1 - 5 ", 1, 5))
