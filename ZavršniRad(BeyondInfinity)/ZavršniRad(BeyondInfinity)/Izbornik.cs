@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,8 +12,8 @@ namespace ZavršniRad_BeyondInfinity_
 
         private ObradaUsluga ObradaUsluga;
         private ObradaKorisnik ObradaKorisnik;
-        private ObradaDjelatnik ObradaDjelatnik;
-
+        public ObradaDjelatnik ObradaDjelatnik { get; }
+        private ObradaVozilo ObradaVozilo;
 
 
         public Izbornik()
@@ -20,7 +21,8 @@ namespace ZavršniRad_BeyondInfinity_
         {
             ObradaKorisnik = new ObradaKorisnik();
             ObradaUsluga = new ObradaUsluga();
-            ObradaDjelatnik = new ObradaDjelatnik();    
+            ObradaDjelatnik = new ObradaDjelatnik(); 
+            ObradaVozilo = new ObradaVozilo(this);          
             PorukaPozdrava();
             PrikaziteIzbornik();        
         }
@@ -65,7 +67,7 @@ namespace ZavršniRad_BeyondInfinity_
                     break;
 
                 case 4:
-                    Console.WriteLine("Za rad sa djelatnicima");
+                    ObradaVozilo.PrikaziteIzbornik();
                     PrikaziteIzbornik();
                      break;
 

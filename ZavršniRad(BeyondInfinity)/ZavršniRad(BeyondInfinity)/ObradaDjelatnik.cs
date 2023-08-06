@@ -155,7 +155,7 @@ namespace ZavršniRad_BeyondInfinity_
 
 
 
-        private void PrikaziDjelatnike()
+        public void PrikaziDjelatnike()
         {
             Console.WriteLine();
             Console.WriteLine("---------Dostupni djelatnici-------");

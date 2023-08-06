@@ -100,10 +100,26 @@ namespace ZavršniRad_BeyondInfinity_
             }
 
         }
-       
 
-        
-        internal static string UcitajString(string poruka, string greška)
+
+        internal static DateTime ucitajDatum(string v1, string v2)
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine(v1);
+                    return DateTime.Parse(Console.ReadLine());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(v2);
+                }
+            }
+        }
+
+
+            internal static string UcitajString(string poruka, string greška)
         {
 
             string q = "";

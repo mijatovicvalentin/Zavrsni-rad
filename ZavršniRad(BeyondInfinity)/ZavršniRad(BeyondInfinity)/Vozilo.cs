@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace ZavršniRad_BeyondInfinity_
 {
-    internal class Vozilo
+    internal class Vozilo : Povezivanje
     {
 
         public string Naziv { get; set; }
-        public string Cijena { get; set; }
+        public decimal Cijena { get; set; }
         public DateTime DatumProizvodnje { get; set; }
         public Djelatnik Djelatnik { get; set; }
         public int Tezina { get; set; }
+
     }
 }
