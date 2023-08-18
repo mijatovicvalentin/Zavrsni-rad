@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Buffers;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Transactions;
 
@@ -14,7 +15,7 @@ namespace ZavršniRad_BeyondInfinity_
         {
             Vozila = new List<Vozilo>();
 
-          
+
             if (Pomocno.DEV)
             {
                 TestniPodaci();
@@ -77,7 +78,7 @@ namespace ZavršniRad_BeyondInfinity_
                     PrikaziteIzbornik();
                     break;
 
-                    
+
                 case 5:
                     Console.WriteLine("\nGotov rad sa vozilima !\n");
                     break;
@@ -132,19 +133,19 @@ namespace ZavršniRad_BeyondInfinity_
             return Izbornik.ObradaDjelatnik.Djelatnici[broj - 1];
 
         }
-            private void PrikaziVozila()
+        private void PrikaziVozila()
+        {
+
+            Console.WriteLine();
+            Console.WriteLine("---------Dostupna vozila-----------");
+            Console.WriteLine("-----------------------------------");
+
+
+
+
+            foreach (Vozilo v in Vozila)
+
             {
-
-                Console.WriteLine();
-                Console.WriteLine("---------Dostupna vozila-----------");
-                Console.WriteLine("-----------------------------------");
-
-
-            
-
-                foreach (Vozilo v in Vozila)
-            
-                {
 
 
 
@@ -152,16 +153,21 @@ namespace ZavršniRad_BeyondInfinity_
 
 
                 Console.WriteLine("Id: {0}  ", v.id);
-                    Console.WriteLine("Naziv: {0}  ", v.Naziv);
-                    Console.WriteLine("Cijena: {0}  ", v.Cijena);
-                    Console.WriteLine("Datum proizvodnje: {0} ", v.DatumProizvodnje);
-                    Console.WriteLine("Djelatnik: {0} ", v.Djelatnik);
-                Console.WriteLine("Težina: {0} {1}", v.Tezina , "kg"); ;
-                    Console.WriteLine("----------------------------");
-
+                Console.WriteLine("Naziv: {0}  ", v.Naziv);
+                Console.WriteLine("Cijena: {0}  ", v.Cijena);
+                Console.WriteLine("Datum proizvodnje: {0} ", v.DatumProizvodnje);
+                foreach(Djelatnik d in Izbornik.ObradaDjelatnik.Djelatnici)
+                 
+                {
+                    Console.WriteLine("Djelatnik: {0} {1}", d.Ime , d.Prezime);
                 }
+                //Console.WriteLine("Djelatnik: {0} ", v.Djelatnik);
+                Console.WriteLine("Težina: {0} {1}", v.Tezina, "kg"); ;
+                Console.WriteLine("----------------------------");
+
             }
-        
+        }
+
 
 
 
@@ -191,13 +197,10 @@ namespace ZavršniRad_BeyondInfinity_
 
         private void TestniPodaci()
         {
-            Vozila.Add(new Vozilo() { Naziv = "Mercury" });
-            Vozila.Add(new Vozilo() { Naziv = "SpaceSolution" });
-            Vozila.Add(new Vozilo() { Naziv = "Observer" });
-
+            Vozila.Add(new Vozilo() { Naziv = "Mercury"});
+            
         }
 
 
     }
 }
-

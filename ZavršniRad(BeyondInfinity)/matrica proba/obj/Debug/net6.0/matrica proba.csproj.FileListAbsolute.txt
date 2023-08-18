@@ -1,0 +1,15 @@
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\bin\Debug\net6.0\matrica proba.exe
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\bin\Debug\net6.0\matrica proba.deps.json
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\bin\Debug\net6.0\matrica proba.runtimeconfig.json
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\bin\Debug\net6.0\matrica proba.dll
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\bin\Debug\net6.0\matrica proba.pdb
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\obj\Debug\net6.0\matrica proba.csproj.AssemblyReference.cache
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\obj\Debug\net6.0\matrica proba.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\obj\Debug\net6.0\matrica proba.AssemblyInfoInputs.cache
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\obj\Debug\net6.0\matrica proba.AssemblyInfo.cs
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\obj\Debug\net6.0\matrica proba.csproj.CoreCompileInputs.cache
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\obj\Debug\net6.0\matrica proba.dll
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\obj\Debug\net6.0\refint\matrica proba.dll
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\obj\Debug\net6.0\matrica proba.pdb
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\obj\Debug\net6.0\matrica proba.genruntimeconfig.cache
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\matrica proba\obj\Debug\net6.0\ref\matrica proba.dll

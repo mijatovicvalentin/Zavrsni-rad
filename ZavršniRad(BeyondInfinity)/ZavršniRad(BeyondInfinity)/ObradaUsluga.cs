@@ -162,7 +162,7 @@ namespace ZavršniRad_BeyondInfinity_
 
         }
 
-
+        
         private void TestniPodaci()
         {
             Usluge.Add(new Usluga() { Naziv = "ProximaB" });

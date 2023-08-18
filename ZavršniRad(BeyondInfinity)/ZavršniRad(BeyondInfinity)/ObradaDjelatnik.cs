@@ -179,9 +179,7 @@ namespace ZavršniRad_BeyondInfinity_
         private void TestniPodaci()
         {
             Djelatnici.Add(new Djelatnik() { Ime = "shaw" });
-            Djelatnici.Add(new Djelatnik() { Ime = "Luke" });
-            Djelatnici.Add(new Djelatnik() { Ime = "Ivan" });
-
+            Djelatnici.Add(new Djelatnik() { Ime = "bbb" });
         }
     }
 }

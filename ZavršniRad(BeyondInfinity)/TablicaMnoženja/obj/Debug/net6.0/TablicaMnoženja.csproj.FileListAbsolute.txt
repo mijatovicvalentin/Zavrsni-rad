@@ -1,0 +1,5 @@
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\TablicaMnoženja\obj\Debug\net6.0\TablicaMnoženja.csproj.AssemblyReference.cache
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\TablicaMnoženja\obj\Debug\net6.0\TablicaMnoženja.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\TablicaMnoženja\obj\Debug\net6.0\TablicaMnoženja.AssemblyInfoInputs.cache
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\TablicaMnoženja\obj\Debug\net6.0\TablicaMnoženja.AssemblyInfo.cs
+C:\Users\mijat\Documents\Zavrsni-rad\ZavršniRad(BeyondInfinity)\TablicaMnoženja\obj\Debug\net6.0\TablicaMnoženja.csproj.CoreCompileInputs.cache
