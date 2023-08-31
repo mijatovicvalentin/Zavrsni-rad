@@ -156,12 +156,14 @@ namespace ZavršniRad_BeyondInfinity_
                 Console.WriteLine("Naziv: {0}  ", v.Naziv);
                 Console.WriteLine("Cijena: {0}  ", v.Cijena);
                 Console.WriteLine("Datum proizvodnje: {0} ", v.DatumProizvodnje);
-                foreach(Djelatnik d in Izbornik.ObradaDjelatnik.Djelatnici)
-                 
-                {
-                    Console.WriteLine("Djelatnik: {0} {1}", d.Ime , d.Prezime);
+
+                foreach (Djelatnik d in Izbornik.ObradaDjelatnik.Djelatnici)
+
+                { 
+
+                Console.WriteLine("Djelatnik: {0} {1}", d.Ime, d.Prezime);
                 }
-                //Console.WriteLine("Djelatnik: {0} ", v.Djelatnik);
+
                 Console.WriteLine("Težina: {0} {1}", v.Tezina, "kg"); ;
                 Console.WriteLine("----------------------------");
 

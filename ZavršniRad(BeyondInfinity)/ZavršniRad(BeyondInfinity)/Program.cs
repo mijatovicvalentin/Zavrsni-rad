@@ -1,6 +1,6 @@
 ﻿
 
 using ZavršniRad_BeyondInfinity_;
-Pomocno.DEV = true;
+Pomocno.DEV = false;
 
 new Izbornik();

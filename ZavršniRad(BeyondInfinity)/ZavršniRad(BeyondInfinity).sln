@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZavršniRad(BeyondInfinity)", "ZavršniRad(BeyondInfinity)\ZavršniRad(BeyondInfinity).csproj", "{7B430989-15E5-43FB-9F2F-6C8B70C1A016}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ljubavni_Kalkulator", "..\..\EdunovaWP1\CSHARP\CSHARP\Practice01\Ljubavni_Kalkulator\Ljubavni_Kalkulator.csproj", "{88EB9F51-B116-425C-8DE4-65D7F3F6B80B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7B430989-15E5-43FB-9F2F-6C8B70C1A016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B430989-15E5-43FB-9F2F-6C8B70C1A016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B430989-15E5-43FB-9F2F-6C8B70C1A016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88EB9F51-B116-425C-8DE4-65D7F3F6B80B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88EB9F51-B116-425C-8DE4-65D7F3F6B80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88EB9F51-B116-425C-8DE4-65D7F3F6B80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88EB9F51-B116-425C-8DE4-65D7F3F6B80B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
