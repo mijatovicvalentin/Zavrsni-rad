@@ -8,7 +8,7 @@ namespace InfinityBeyondControllers.Controllers
     public class uslugaController : ControllerBase
     {
         [HttpGet]
-        public IActionResult Get1()
+        public IActionResult Get2()
         {
 
             var LIST = new List<Usluga>()
@@ -36,7 +36,7 @@ namespace InfinityBeyondControllers.Controllers
 
         [HttpPost]
         [Route("int:sifra")]
-        public IActionResult Put3(int sifra,string usluga)
+        public IActionResult Put2(int sifra,string usluga)
         {
 
             return StatusCode(StatusCodes.Status200OK, usluga);
@@ -49,7 +49,7 @@ namespace InfinityBeyondControllers.Controllers
         [Produces("application/json")]
 
 
-        public IActionResult Delete4(int sifra)
+        public IActionResult Delete2(int sifra)
         {
 
             return StatusCode(StatusCodes.Status200OK, "{\"obrisano\":true}");

@@ -1,4 +1,6 @@
-﻿namespace InfinityBeyondControllers
+﻿using InfinityBeyondControllers.Models;
+
+namespace InfinityBeyondControllers
 {
     public class Usluga : Povezivanje
     {

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using InfinityBeyondControllers.Models;
+using InfinityBeyondControllers.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace InfinityBeyondControllers.Controllers
 {
@@ -10,41 +12,57 @@ namespace InfinityBeyondControllers.Controllers
     public class KorisnikController : ControllerBase    
     {
 
+
+        /// <summary>
+        /// Ruta dohvaća sve smjerove u bazi
+        /// </summary>
+        /// <returns>Lista smjerova</returns>
+        ///
+
+        private readonly InfinityBeyondContext _context;
+
+        public KorisnikController(InfinityBeyondContext context)
+        {
+            _context = context;
+        }
+
+
         [HttpGet]
         public IActionResult Get()
         {
 
-            var lIST = new List<Korisnik>()
-            {
-                new (){Ime="Ime"},
-                new (){Prezime="Prezime"},
-                new (){Oib=0988679564},
-                new (){Email="Mail1878@gmail.com"}
+       
 
 
-            };
-
-            return new JsonResult(lIST);
+            return new JsonResult(_context.korisnik.ToList());
 
         }
 
-        
-        [HttpPut]
-        public IActionResult Put(Korisnik korisnik)
+
+
+        [HttpPost]
+        public IActionResult Post(KorisnikController korisnik)
         {
+
+            _context.korisnik.Add(korisnik);
+            _context.SaveChanges();
+
+
 
             return Created("/api&v1/korisnik", korisnik);
 
         }
 
-        [HttpPost]
+
+
+        [HttpPut]
         [Route("sifra:int")]
-        public IActionResult Post(int sifra, string korisnik)
+        public IActionResult Put(int sifra, KorisnikController korisnik)
         {
 
             return StatusCode(StatusCodes.Status200OK, korisnik);
-
         }
+
 
 
         [HttpDelete]
