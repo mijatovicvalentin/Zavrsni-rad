@@ -25,7 +25,9 @@ builder.Services.AddDbContext<InfinityBeyondContext>(o =>
         builder.Configuration.
         GetConnectionString(name: "InfinityBeyondContext")
         )
+   
     );
+
 
 
 

@@ -5,6 +5,6 @@ namespace InfinityBeyondControllers.Models
     public abstract class Povezivanje
     {
         [Key]
-        public int sifra { get; set; }
+        public int id { get; set; }
     }
 }

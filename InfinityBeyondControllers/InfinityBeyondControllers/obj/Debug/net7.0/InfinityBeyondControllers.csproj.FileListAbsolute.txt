@@ -76,3 +76,8 @@ C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondCon
 C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\obj\Debug\net7.0\InfinityBeyondControllers.pdb
 C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\obj\Debug\net7.0\InfinityBeyondControllers.genruntimeconfig.cache
 C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\obj\Debug\net7.0\ref\InfinityBeyondControllers.dll
+C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\bin\Debug\net7.0\Humanizer.dll
+C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\bin\Debug\net7.0\System.CodeDom.dll

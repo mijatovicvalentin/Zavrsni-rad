@@ -1,4 +1,5 @@
-﻿using InfinityBeyondControllers.Data;
+﻿using InfinityBeyondControllers;
+using InfinityBeyondControllers.Data;
 using InfinityBeyondControllers.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,12 +7,12 @@ namespace InfinityBeyondControllers.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class KorisnikController : ControllerBase
+    public class UslugaController : ControllerBase
     {
 
         private readonly InfinityBeyondContext _context;
 
-        public KorisnikController(InfinityBeyondContext context)
+        public UslugaController(InfinityBeyondContext context)
         {
             _context = context;
         }
@@ -20,28 +21,28 @@ namespace InfinityBeyondControllers.Controllers
         public IActionResult Get()
         {
 
-            return new JsonResult(_context.Korisnik.ToList());
+            return new JsonResult(_context.Usluga.ToList());
         }
 
         [HttpPost]
-        public IActionResult Post(Korisnik korisnik)
+        public IActionResult Post(Usluga usluga)
         {
-            _context.Korisnik.Add(korisnik);
+            _context.Usluga.Add(usluga);
             _context.SaveChanges();
-         
-            return Created("/api/v1/Smjer", korisnik); 
+
+            return Created("/api/v1/Smjer", usluga);
         }
 
 
         [HttpPut]
         [Route("{sifra:int}")]
-        public IActionResult Put(int sifra, Korisnik korisnik)
+        public IActionResult Put(int sifra, Usluga usluga)
         {
-            
 
 
 
-            return StatusCode(StatusCodes.Status200OK, korisnik);
+
+            return StatusCode(StatusCodes.Status200OK, usluga);
         }
 
         [HttpDelete]
