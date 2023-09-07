@@ -17,6 +17,8 @@ namespace InfinityBeyondControllers.Data
         public DbSet<Korisnik> Korisnik { get; set; }
 
         public DbSet<Usluga> Usluga { get; set; }
+
+        public DbSet<vrsta_djelatnika> vrsta_Djelatnika { get; set; }   
     }
 
 }

@@ -4,6 +4,7 @@ using InfinityBeyondControllers.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InfinityBeyondControllers.Migrations
 {
     [DbContext(typeof(InfinityBeyondContext))]
-    partial class InfinityBeyondContextModelSnapshot : ModelSnapshot
+    [Migration("20230907090353_vrsta_djelatnia")]
+    partial class vrsta_djelatnia
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
