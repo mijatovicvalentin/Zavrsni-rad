@@ -2,6 +2,9 @@
 using InfinityBeyondControllers.Data;
 using InfinityBeyondControllers.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;
+using System.Linq.Expressions;
 
 namespace InfinityBeyondControllers.Controllers
 {
@@ -21,16 +24,50 @@ namespace InfinityBeyondControllers.Controllers
         public IActionResult Get()
         {
 
-            return new JsonResult(_context.Usluga.ToList());
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); //kontrola ako  nije dobar
+            }
+            try
+            {
+                var usluge = _context.Usluga.ToList();
+                if (usluge == null || usluge.Count == 0)
+                {
+                    return new EmptyResult();
+                }
+                return new JsonResult(_context.Usluga.ToList());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                    ex.Message);
+            }
+
+
         }
+
+
 
         [HttpPost]
         public IActionResult Post(Usluga usluga)
         {
-            _context.Usluga.Add(usluga);
-            _context.SaveChanges();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-            return Created("/api/v1/Smjer", usluga);
+            try
+            {
+                _context.Usluga.Add(usluga);
+                _context.SaveChanges();
+                return StatusCode(StatusCodes.Status201Created, usluga);
+            } catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                    ex.Message);
+            }
+
+
         }
 
 
@@ -38,19 +75,80 @@ namespace InfinityBeyondControllers.Controllers
         [Route("{sifra:int}")]
         public IActionResult Put(int sifra, Usluga usluga)
         {
+            if (sifra <= 0 || usluga == null)
+            {
 
+                return BadRequest();
+            }
+            try
+            {
+                var uslugaBaza = _context.Usluga.Find(sifra);
+                if (uslugaBaza == null)
+                {
+                    return BadRequest();
+                }
+                uslugaBaza.Naziv = usluga.Naziv;
+                uslugaBaza.Destinacija = usluga.Destinacija;
+                uslugaBaza.nacin_placanja = usluga.nacin_placanja;
+                uslugaBaza.Cijena = usluga.Cijena;
+                uslugaBaza.broj_mjesta = usluga.broj_mjesta;
 
+                _context.Usluga.Update(uslugaBaza);
+                _context.SaveChanges();
+                return StatusCode(StatusCodes.Status200OK, uslugaBaza);
+            }
 
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable, ex);
+            }
 
-            return StatusCode(StatusCodes.Status200OK, usluga);
+            
+
         }
+    
+    
 
         [HttpDelete]
         [Route("{sifra:int}")]
         [Produces("application/json")]
         public IActionResult Delete(int sifra)
         {
-            return StatusCode(StatusCodes.Status200OK, "{\"obrisano\":true}");
+            if(sifra == 0)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                var uslugaBaza = _context.Usluga.Find(sifra);
+                if (uslugaBaza == null)
+                {
+                    return BadRequest();
+                }
+
+                _context.Usluga.Remove(uslugaBaza);
+                _context.SaveChanges();
+
+                return new JsonResult("{\"poruka\":\"obrisano\"}");
+            }
+            catch (Exception ex)
+            {
+
+                try
+                {
+                    SqlException sqle = (SqlException)ex;
+                    return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                                  sqle);
+                }
+                catch (Exception e)
+                {
+
+                }
+
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                                  ex);
+            }
         }
     }
 }
+    
