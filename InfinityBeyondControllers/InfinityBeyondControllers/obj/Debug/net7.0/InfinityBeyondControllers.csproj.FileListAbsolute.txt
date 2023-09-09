@@ -81,3 +81,5 @@ C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondCon
 C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\bin\Debug\net7.0\Faker.Net.6.0.dll
+C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyondControllers\InfinityBeyondControllers\bin\Debug\net7.0\de-DE\Faker.Net.6.0.resources.dll
