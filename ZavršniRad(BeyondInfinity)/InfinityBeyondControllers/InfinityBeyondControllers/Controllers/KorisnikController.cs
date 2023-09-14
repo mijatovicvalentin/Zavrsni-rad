@@ -81,6 +81,7 @@ namespace InfinityBeyondControllers.Controllers
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
 
+
         [HttpPost]
         public IActionResult Post(Korisnik korisnik)
         {
@@ -102,7 +103,6 @@ namespace InfinityBeyondControllers.Controllers
                     ex.Message);
             }
         }
-
 
         /// <summary>
         /// Mijenja podatke postojećeg korisnika u bazi
@@ -128,6 +128,7 @@ namespace InfinityBeyondControllers.Controllers
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
 
+
         [HttpPut]
         [Route("{sifra:int}")]
         public IActionResult Put(int sifra, Korisnik korisnik)
@@ -145,10 +146,10 @@ namespace InfinityBeyondControllers.Controllers
                 {
                     return BadRequest();
                 }
-                KorisnikBaza.ime = korisnik.ime;
-                KorisnikBaza.prezime = korisnik.prezime;
-                KorisnikBaza.oib = korisnik.oib;
-                KorisnikBaza.email = korisnik.email;
+                KorisnikBaza.Ime = korisnik.Ime;
+                KorisnikBaza.Prezime = korisnik.Prezime;
+                KorisnikBaza.Oib = korisnik.Oib;
+                KorisnikBaza.Email = korisnik.Email;
 
                 _context.Korisnik.Update(KorisnikBaza);
                 _context.SaveChanges();
@@ -187,14 +188,15 @@ namespace InfinityBeyondControllers.Controllers
                 return BadRequest();
             }
 
-            var korisnikBaza = _context.Korisnik.Find(sifra);
-            if (korisnikBaza == null)
-            {
-                return BadRequest();
-            }
-
             try
             {
+                var korisnikBaza = _context.Korisnik.Find(sifra);
+                if (korisnikBaza == null)
+                {
+                    return BadRequest();
+                }
+                //napisati provjeru moze li se obrisati
+
                 _context.Korisnik.Remove(korisnikBaza);
                 _context.SaveChanges();
 
@@ -204,10 +206,20 @@ namespace InfinityBeyondControllers.Controllers
             catch (Exception ex)
             {
 
-                return new JsonResult("{\"poruka\":\"Ne može se obrisati\"}");
+                try
+                {
+                    SqlException sqle = (SqlException)ex;
+                    return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                                  sqle);
+                }
+                catch (Exception e)
+                {
 
+                }
+
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                                  ex);
             }
         }
-
-    }  
+    }
 }

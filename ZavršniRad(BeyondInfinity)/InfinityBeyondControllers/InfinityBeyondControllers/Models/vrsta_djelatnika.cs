@@ -1,10 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
 namespace InfinityBeyondControllers.Models
 {
-    public abstract class Povezivanje
+    public class vrsta_djelatnika : Povezivanje
     {
-        [Key]
-        public int id { get; set; }
+        public string? Naziv { get; set; }
     }
 }

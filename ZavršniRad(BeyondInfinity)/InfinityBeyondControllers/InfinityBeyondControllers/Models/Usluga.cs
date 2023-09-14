@@ -4,10 +4,10 @@ namespace InfinityBeyondControllers.Models
 {
     public class Usluga : Povezivanje
     {
-        public string? naziv { get; set; }
-        public string? destinacija { get; set; }
+        public string? Naziv { get; set; }
+        public string? Destinacija { get; set; }
         public int nacin_placanja { get; set; }
-        public decimal? cijena { get; set; }
+        public decimal? Cijena { get; set; }
         public int broj_mjesta { get; set; }
     }
 }

@@ -20,6 +20,21 @@ namespace InfinityBeyondControllers.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Dohvaća sve vrste djelatnika iz baze
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    GET api/v1/Smjer
+        ///
+        /// </remarks>
+        /// <returns>Smjerovi u bazi</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
+
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -43,23 +58,123 @@ namespace InfinityBeyondControllers.Controllers
             }
 
         }
+        /// <summary>
+        /// Mijenja podatke postojeće vrste djelatnika u bazi
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    PUT api/v1/djelatnik/1
+        ///
+        /// {
+        ///  "id": 0,
+        ///  "naziv": Pilot
+        ///
+        /// }
+        /// </remarks>
+        /// <param name="id">id vrste djelatnika koji se mijenja</param>  
+        /// <returns>Svi poslani podaci od vrste djelatnika</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="204">Nema u bazi djelatnika kojeg želimo promijeniti</response>
+        /// <response code="415">Nismo poslali JSON</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
+
 
         [HttpPost]
-        public IActionResult Post(vrsta_djelatnika vrsta_djelatnika)
+        public IActionResult Post(vrsta_djelatnika vrstedjelatnika)
         {
-            return Created("/api/v1/Smjer", vrsta_djelatnika);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                _context.vrsta_Djelatnika.Add(vrstedjelatnika);
+                _context.SaveChanges();
+                return StatusCode(StatusCodes.Status201Created, vrstedjelatnika);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                                   ex.Message);
+            }
+
+
 
         }
+
+        /// <summary>
+        /// Mijenja podatke postojeće vrste djelatnika u bazi
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    PUT api/v1/smjer/1
+        ///
+        /// {
+        ///  "id": 0,
+        ///  "naziv": Pilot
+        ///
+        /// }
+        ///
+        /// </remarks>
+        /// <param name="id">id vrste djelatnika koji se mijenja</param>  
+        /// <returns>Svi poslani podaci od vrtse djelatnika</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="204">Nema u bazi smjera kojeg želimo promijeniti</response>
+        /// <response code="415">Nismo poslali JSON</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
+
+
         [HttpPut]
         [Route("{sifra:int}")]
-        public IActionResult Put(int sifra, vrsta_djelatnika vrsta_djelatnika)
+        public IActionResult Put(int id, vrsta_djelatnika vrstedjelatnika)
         {
 
-            return StatusCode(StatusCodes.Status200OK, vrsta_djelatnika);
+            if (id <= 0 || vrstedjelatnika == null)
+            {
+                return BadRequest();
+            }
 
+            try
+            {
+                var vrstedjelatnikaBaza = _context.vrsta_Djelatnika.Find(id);
+                if (vrstedjelatnikaBaza == null)
+                {
+                    return BadRequest();
+                }
 
+                vrstedjelatnikaBaza.Naziv = vrstedjelatnikaBaza.Naziv;
+
+                _context.vrsta_Djelatnika.Update(vrstedjelatnikaBaza);
+                _context.SaveChanges();
+
+                return StatusCode(StatusCodes.Status200OK, vrstedjelatnikaBaza);
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                                  ex);
+
+            }
         }
-
+        /// <summary>
+        /// Briše vrstu djelatnika iz baze
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    DELETE api/v1/smjer/1
+        ///    
+        /// </remarks>
+        /// <param name="id">id vrste djelatnika koji se briše</param>  
+        /// <returns>Odgovor da li je obrisano ili ne</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="204">Nema u bazi smjera kojeg želimo obrisati</response>
+        /// <response code="415">Nismo poslali JSON</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
 
         [HttpDelete]
         [Route("{sifra:int}")]

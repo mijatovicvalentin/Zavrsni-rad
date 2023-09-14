@@ -5,10 +5,10 @@ namespace InfinityBeyondControllers.Models
     public class Korisnik : Povezivanje
     {
      
-        public string? ime { get; set; }
-        public string? prezime { get; set; }
-        public string? oib { get; set; }
-        public string? email { get; set; }
+        public string? Ime { get; set; }
+        public string? Prezime { get; set; }
+        public string? Oib { get; set; }
+        public string? Email { get; set; }
 
     }
 }

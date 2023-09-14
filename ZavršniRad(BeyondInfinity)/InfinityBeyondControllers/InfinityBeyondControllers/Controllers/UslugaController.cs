@@ -33,7 +33,6 @@ namespace InfinityBeyondControllers.Controllers
         /// <response code="200">Sve je u redu</response>
         /// <response code="400">Zahtjev nije valjan (BadRequest)</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
-
         [HttpGet]
         public IActionResult Get()
         {
@@ -85,7 +84,6 @@ namespace InfinityBeyondControllers.Controllers
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
 
 
-
         [HttpPost]
         public IActionResult Post(Usluga usluga)
         {
@@ -107,6 +105,7 @@ namespace InfinityBeyondControllers.Controllers
 
 
         }
+
 
         /// <summary>
         /// Mijenja podatke postojeće usluge u bazi
@@ -133,6 +132,7 @@ namespace InfinityBeyondControllers.Controllers
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
 
+
         [HttpPut]
         [Route("{sifra:int}")]
         public IActionResult Put(int sifra, Usluga usluga)
@@ -149,10 +149,10 @@ namespace InfinityBeyondControllers.Controllers
                 {
                     return BadRequest();
                 }
-                uslugaBaza.naziv = usluga.naziv;
-                uslugaBaza.destinacija = usluga.destinacija;
+                uslugaBaza.Naziv = usluga.Naziv;
+                uslugaBaza.Destinacija = usluga.Destinacija;
                 uslugaBaza.nacin_placanja = usluga.nacin_placanja;
-                uslugaBaza.cijena = usluga.cijena;
+                uslugaBaza.Cijena = usluga.Cijena;
                 uslugaBaza.broj_mjesta = usluga.broj_mjesta;
 
                 _context.Usluga.Update(uslugaBaza);
@@ -184,35 +184,45 @@ namespace InfinityBeyondControllers.Controllers
         /// <response code="204">Nema u bazi usluge kojeg želimo obrisati</response>
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
+
         [HttpDelete]
         [Route("{sifra:int}")]
         [Produces("application/json")]
         public IActionResult Delete(int sifra)
         {
-            if (sifra <= 0)
+            if(sifra == 0)
             {
                 return BadRequest();
             }
-
-            var uslugaBaza = _context.Usluga.Find(sifra);
-            if (uslugaBaza == null)
-            {
-                return BadRequest();
-            }
-
             try
             {
+                var uslugaBaza = _context.Usluga.Find(sifra);
+                if (uslugaBaza == null)
+                {
+                    return BadRequest();
+                }
+
                 _context.Usluga.Remove(uslugaBaza);
                 _context.SaveChanges();
 
-                return new JsonResult("{\"poruka\":\"Obrisano\"}");
-
+                return new JsonResult("{\"poruka\":\"obrisano\"}");
             }
             catch (Exception ex)
             {
 
-                return new JsonResult("{\"poruka\":\"Ne može se obrisati\"}");
+                try
+                {
+                    SqlException sqle = (SqlException)ex;
+                    return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                                  sqle);
+                }
+                catch (Exception e)
+                {
 
+                }
+
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                                  ex);
             }
         }
     }
