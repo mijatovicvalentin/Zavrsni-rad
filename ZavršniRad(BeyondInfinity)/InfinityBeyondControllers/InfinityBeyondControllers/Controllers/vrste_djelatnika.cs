@@ -10,12 +10,12 @@ namespace InfinityBeyondControllers.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class vrsta_djelatnikaController : ControllerBase
+    public class Vrsta_djelatnikaController : ControllerBase
     {
 
         private readonly InfinityBeyondContext _context;
 
-        public vrsta_djelatnikaController(InfinityBeyondContext context)
+        public Vrsta_djelatnikaController(InfinityBeyondContext context)
         {
             _context = context;
         }
@@ -44,12 +44,12 @@ namespace InfinityBeyondControllers.Controllers
             }
             try
             {
-                var vrsta_djelatnika = _context.vrsta_Djelatnika.ToList();
+                var vrsta_djelatnika = _context.Vrsta_Djelatnika.ToList();
                 if (vrsta_djelatnika == null || vrsta_djelatnika.Count == 0)
                 {
                     return new EmptyResult();
                 }
-                return new JsonResult(_context.vrsta_Djelatnika.ToList());
+                return new JsonResult(vrsta_djelatnika);
             }
             catch (Exception ex)
             {
@@ -81,7 +81,7 @@ namespace InfinityBeyondControllers.Controllers
 
 
         [HttpPost]
-        public IActionResult Post(vrsta_djelatnika vrstedjelatnika)
+        public IActionResult Post(Vrsta_djelatnika vrstedjelatnika)
         {
             if (!ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace InfinityBeyondControllers.Controllers
 
             try
             {
-                _context.vrsta_Djelatnika.Add(vrstedjelatnika);
+                _context.Vrsta_Djelatnika.Add(vrstedjelatnika);
                 _context.SaveChanges();
                 return StatusCode(StatusCodes.Status201Created, vrstedjelatnika);
             }
@@ -129,7 +129,7 @@ namespace InfinityBeyondControllers.Controllers
 
         [HttpPut]
         [Route("{sifra:int}")]
-        public IActionResult Put(int id, vrsta_djelatnika vrstedjelatnika)
+        public IActionResult Put(int id, Vrsta_djelatnika vrstedjelatnika)
         {
 
             if (id <= 0 || vrstedjelatnika == null)
@@ -139,7 +139,7 @@ namespace InfinityBeyondControllers.Controllers
 
             try
             {
-                var vrstedjelatnikaBaza = _context.vrsta_Djelatnika.Find(id);
+                var vrstedjelatnikaBaza = _context.Vrsta_Djelatnika.Find(id);
                 if (vrstedjelatnikaBaza == null)
                 {
                     return BadRequest();
@@ -147,7 +147,7 @@ namespace InfinityBeyondControllers.Controllers
 
                 vrstedjelatnikaBaza.Naziv = vrstedjelatnikaBaza.Naziv;
 
-                _context.vrsta_Djelatnika.Update(vrstedjelatnikaBaza);
+                _context.Vrsta_Djelatnika.Update(vrstedjelatnikaBaza);
                 _context.SaveChanges();
 
                 return StatusCode(StatusCodes.Status200OK, vrstedjelatnikaBaza);
@@ -188,13 +188,13 @@ namespace InfinityBeyondControllers.Controllers
 
             try
             {
-                var vrste_djelatnikaBaza = _context.vrsta_Djelatnika.Find(sifra);
+                var vrste_djelatnikaBaza = _context.Vrsta_Djelatnika.Find(sifra);
                 if (vrste_djelatnikaBaza == null)
                 {
                     return BadRequest();
                 }
 
-                _context.vrsta_Djelatnika.Remove(vrste_djelatnikaBaza);
+                _context.Vrsta_Djelatnika.Remove(vrste_djelatnikaBaza);
                 _context.SaveChanges();
 
                 return new JsonResult("{\"poruka\":\"Obrisano\"}");
