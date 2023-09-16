@@ -165,34 +165,36 @@ namespace InfinityBeyondControllers.Controllers
                    ex);
             }
 
-            /// <summary>
-            /// Mijenja podatke postojećeg djelatnika u bazi
-            /// </summary>
-            /// <remarks>
-            /// Primjer upita:
-            ///
-            ///    PUT api/v1/Djelatnik/1
-            ///
-            /// {
-            ///  "id": 0,
-            ///  "ime": baton,
-            ///  "prezime": karoic,
-            ///  "oib": 9384958675,
-            ///  "kontakt": email
-            ///  "jedinstvenibroj": 8247
-            ///  "vrsta_djelatnika": Pilot
-            /// }
-            ///
-            /// </remarks>
-            /// <param name="id">id djelatnika koji se mijenja</param>  
-            /// <returns>Svi poslani podaci od djelatnika</returns>
-            /// <response code="200">Sve je u redu</response>
-            /// <response code="204">Nema u bazi djelatnika kojeg želimo promijeniti</response>
-            /// <response code="415">Nismo poslali JSON</response> 
-            /// <response code="503">Na azure treba dodati IP u firewall</response> 
 
 
         }
+
+
+        /// <summary>
+        /// Mijenja podatke postojećeg djelatnika u bazi
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    PUT api/v1/Djelatnik/1
+        ///
+        /// {
+        ///  "id": 0,
+        ///  "ime": baton,
+        ///  "prezime": karoic,
+        ///  "oib": 9384958675,
+        ///  "kontakt": email
+        ///  "jedinstvenibroj": 8247
+        ///  "vrsta_djelatnika": Pilot
+        /// }
+        ///
+        /// </remarks>
+        /// <param name="id">id djelatnika koji se mijenja</param>  
+        /// <returns>Svi poslani podaci od djelatnika</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="204">Nema u bazi djelatnika kojeg želimo promijeniti</response>
+        /// <response code="415">Nismo poslali JSON</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
         [HttpPut]
         [Route("{sifra:int}")]
         public IActionResult Put(int sifra, DjelatnikDTO djelatnikDTO)
