@@ -1,10 +1,10 @@
-﻿using InfinityBeyondControllers.Controllers;
-using InfinityBeyondControllers.Models;
+﻿using InfinityBeyondSwagger;
+using InfinityBeyondSwagger.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 
 
-namespace InfinityBeyondControllers.Data
+namespace InfinityBeyondSwagger.Data
 {
     public class InfinityBeyondContext : DbContext
     {
@@ -29,6 +29,9 @@ namespace InfinityBeyondControllers.Data
         {
 
             modelBuilder.Entity<Djelatnik>().HasOne(v => v.Vrsta_djelatnika);
+
+            modelBuilder.Entity<Vozilo>().HasOne(vv => vv.djelatnik);
+
 
 
         }

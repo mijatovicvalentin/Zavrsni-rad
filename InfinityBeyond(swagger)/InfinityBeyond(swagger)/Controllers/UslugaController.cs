@@ -1,6 +1,6 @@
-﻿using InfinityBeyondControllers;
-using InfinityBeyondControllers.Data;
-using InfinityBeyondControllers.Models;
+﻿using InfinityBeyondSwagger;
+using InfinityBeyondSwagger.Data;
+using InfinityBeyondSwagger.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;

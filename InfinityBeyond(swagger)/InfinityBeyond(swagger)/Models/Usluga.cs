@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace InfinityBeyondControllers.Models
+namespace InfinityBeyondSwagger.Models
 {
     public class Usluga : Povezivanje
     {

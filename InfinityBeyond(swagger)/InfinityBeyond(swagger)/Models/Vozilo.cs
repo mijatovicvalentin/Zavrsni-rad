@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace InfinityBeyondControllers.Models
+namespace InfinityBeyondSwagger.Models
 {
     public class Vozilo : Povezivanje
     {

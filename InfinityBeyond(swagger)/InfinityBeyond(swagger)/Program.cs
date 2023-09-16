@@ -1,5 +1,5 @@
-using InfinityBeyondControllers.Data;
-using InfinityBeyondControllers.Data;
+using InfinityBeyondSwagger.Data;
+using InfinityBeyondSwagger.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 

@@ -3875,9 +3875,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\InfinityBeyond(swagger).csproj",
-      "projectName": "InfinityBeyond(swagger)",
-      "projectPath": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\InfinityBeyond(swagger).csproj",
+      "projectUniqueName": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\InfinityBeyondSwagger.csproj",
+      "projectName": "InfinityBeyondSwagger",
+      "projectPath": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\InfinityBeyondSwagger.csproj",
       "packagesPath": "C:\\Users\\mijat\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\obj\\",
       "projectStyle": "PackageReference",

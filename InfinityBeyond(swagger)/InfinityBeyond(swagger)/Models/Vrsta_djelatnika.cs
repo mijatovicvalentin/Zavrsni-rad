@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-namespace InfinityBeyondControllers.Models
+namespace InfinityBeyondSwagger.Models
 {
     public class Vrsta_djelatnika : Povezivanje
     {

@@ -1,7 +1,6 @@
-﻿using InfinityBeyondControllers.Data;
-using InfinityBeyondControllers.Migrations;
-using InfinityBeyondControllers.Models;
-using InfinityBeyondControllers.Models.DTO;
+﻿using InfinityBeyondSwagger.Data;
+using InfinityBeyondSwagger.Models;
+using InfinityBeyondSwagger.Models.DTO;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

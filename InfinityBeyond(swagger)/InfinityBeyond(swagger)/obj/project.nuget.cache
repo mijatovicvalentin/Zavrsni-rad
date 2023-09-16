@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+7jstvqHs8s5XtHMNEVIDkfgtgwomK3WxUt5DY6Go8hDnFI13AXskeLrnMNKZXukXAJCpVcfHuCpGCe7wWWZ3w==",
+  "dgSpecHash": "edx3WGg6zliJQOcOoz8xd0RGMGTxH8Xcdnvn+rduSHyO5h4b6pUJgpUCqZlgNDw5qvOeA7ongBqiRqG4aHlatQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\InfinityBeyond(swagger).csproj",
+  "projectFilePath": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\InfinityBeyondSwagger.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mijat\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\mijat\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
