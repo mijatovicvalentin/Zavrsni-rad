@@ -1,4 +1,5 @@
 ﻿using InfinityBeyondControllers.Data;
+using InfinityBeyondControllers.Migrations;
 using InfinityBeyondControllers.Models;
 using InfinityBeyondControllers.Models.DTO;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -70,7 +71,144 @@ namespace InfinityBeyondControllers.Controllers
 
         }
 
+        [HttpPost]
+        public IActionResult Post(DjelatnikDTO djelatnikDTO)
+        {
 
-        
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (djelatnikDTO.id <= 0)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+
+                var vrsta_Djelatnika = _context.Vrsta_Djelatnika.Find(djelatnikDTO.id);
+
+                if (vrsta_Djelatnika == null)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                Djelatnik d = new()
+                {
+                    ime = djelatnikDTO.ime,
+                    prezime = djelatnikDTO.prezime,
+                    oib = djelatnikDTO.oib,
+                    kontakt = djelatnikDTO.kontakt,
+                    jedinstvenibroj = djelatnikDTO.jedinstvenibroj,
+                    Vrsta_djelatnika = djelatnikDTO.vrsta_djelatnika
+                   
+
+                };
+
+                _context.Djelatnik.Add(d);
+                _context.SaveChanges();
+
+                djelatnikDTO.id = d.id;
+
+                return Ok(djelatnikDTO);
+
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                   StatusCodes.Status503ServiceUnavailable,
+                   ex);
+            }
+
+        }
+        [HttpPut]
+        [Route("{sifra:int}")]
+        public IActionResult Put(int sifra, DjelatnikDTO djelatnikDTO)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            if (sifra <= 0 || djelatnikDTO == null)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                var smjer = _context.Vrsta_Djelatnika.Find(djelatnikDTO.id);
+
+                if (smjer == null)
+                {
+                    return BadRequest();
+                }
+
+                var Djelatnik = _context.Djelatnik.Find(sifra);
+
+                if (Djelatnik == null)
+                {
+                    return BadRequest();
+                }
+
+                Djelatnik.ime = djelatnikDTO.ime;
+                Djelatnik.prezime = djelatnikDTO.prezime;
+                Djelatnik.oib = djelatnikDTO.oib;
+                Djelatnik.kontakt = djelatnikDTO.kontakt;
+                Djelatnik.jedinstvenibroj = djelatnikDTO.jedinstvenibroj;
+                Djelatnik.Vrsta_djelatnika = djelatnikDTO.vrsta_djelatnika;
+
+                _context.Djelatnik.Update(Djelatnik);
+                _context.SaveChanges();
+
+                djelatnikDTO.id = sifra;
+
+                return Ok(djelatnikDTO);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+                    StatusCodes.Status503ServiceUnavailable,
+                    ex.Message);
+            }
+
+
+        }
+
+        [HttpDelete]
+        [Route("{sifra:int}")]
+        [Produces("application/json")]
+        public IActionResult Delete(int sifra)
+        {
+            if (sifra <= 0)
+            {
+                return BadRequest();
+            }
+
+            var DjelatnikBaza = _context.Djelatnik.Find(sifra);
+            if (DjelatnikBaza == null)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                _context.Djelatnik.Remove(DjelatnikBaza);
+                _context.SaveChanges();
+
+                return new JsonResult("{\"poruka\":\"Obrisano\"}");
+
+            }
+            catch (Exception ex)
+            {
+
+                return new JsonResult("{\"poruka\":\"Ne može se obrisati\"}");
+
+            }
+        }
+
+
     }
 }
