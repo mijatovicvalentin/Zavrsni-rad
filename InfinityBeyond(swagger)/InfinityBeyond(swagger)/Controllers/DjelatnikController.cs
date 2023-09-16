@@ -16,7 +16,7 @@ namespace InfinityBeyondControllers.Controllers
     {
         private readonly InfinityBeyondContext _context;
         private readonly ILogger<DjelatnikController> _logger;
-        
+
         public DjelatnikController(InfinityBeyondContext context,
             ILogger<DjelatnikController> logger)
         {
@@ -62,8 +62,9 @@ namespace InfinityBeyondControllers.Controllers
                 });
                 return Ok(vrati);
             }
-            catch (Exception ex) { 
-            
+            catch (Exception ex)
+            {
+
                 return StatusCode(StatusCodes.Status503ServiceUnavailable,
                     ex);
             }
@@ -110,7 +111,7 @@ namespace InfinityBeyondControllers.Controllers
                 _context.Djelatnik.Add(d);
                 _context.SaveChanges();
 
-                djelatnikDTO.id = d.id;
+                djelatnikDTO.vd_sifra = d.id;
 
                 return Ok(djelatnikDTO);
 
@@ -139,9 +140,9 @@ namespace InfinityBeyondControllers.Controllers
 
             try
             {
-                var vrsta_djelatnika = _context.Vrsta_Djelatnika.Find(djelatnikDTO.vd_sifra);
+                var vrstedjelatnika = _context.Vrsta_Djelatnika.Find(djelatnikDTO.id);
 
-                if (vrsta_djelatnika == null)
+                if (vrstedjelatnika == null)
                 {
                     return BadRequest();
                 }
@@ -158,13 +159,13 @@ namespace InfinityBeyondControllers.Controllers
                 Djelatnik.oib = djelatnikDTO.oib;
                 Djelatnik.kontakt = djelatnikDTO.kontakt;
                 Djelatnik.jedinstvenibroj = djelatnikDTO.jedinstvenibroj;
-                Djelatnik.Vrsta_djelatnika = vrsta_djelatnika;
+                Djelatnik.Vrsta_djelatnika = vrstedjelatnika;
 
                 _context.Djelatnik.Update(Djelatnik);
                 _context.SaveChanges();
 
-                djelatnikDTO.id = sifra;
-                djelatnikDTO.vrsta_djelatnika = vrsta_djelatnika.Naziv;
+                djelatnikDTO.vd_sifra = sifra;
+
                 return Ok(djelatnikDTO);
             }
             catch (Exception ex)
