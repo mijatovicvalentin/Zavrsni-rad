@@ -24,6 +24,20 @@ namespace InfinityBeyondControllers.Controllers
         }
 
 
+        /// <summary>
+        /// Dohvaća sve djelatnike iz baze
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    GET api/v1/Djelatnik
+        ///
+        /// </remarks>
+        /// <returns>djelatnike u bazi</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -70,6 +84,34 @@ namespace InfinityBeyondControllers.Controllers
 
 
         }
+
+        /// <summary>
+        /// Mijenja podatke postojećeg djelatnika u bazi
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    PUT api/v1/Djelatnik/1
+        ///
+        /// {
+        ///  "id": 0,
+        ///  "ime": baton,
+        ///  "prezime": karoic,
+        ///  "oib": 9384958675,
+        ///  "kontakt": email
+        ///  "jedinstvenibroj": 8247
+        ///  "vrsta_djelatnika": Pilot
+        /// }
+        ///
+        /// </remarks>
+        /// <param name="id">id djelatnika koji se mijenja</param>  
+        /// <returns>Svi poslani podaci od korisnika</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="204">Nema u bazi Djelatnika kojeg želimo promijeniti</response>
+        /// <response code="415">Nismo poslali JSON</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
+
+
 
         [HttpPost]
         public IActionResult Post(DjelatnikDTO djelatnikDTO)
@@ -122,6 +164,33 @@ namespace InfinityBeyondControllers.Controllers
                    StatusCodes.Status503ServiceUnavailable,
                    ex);
             }
+
+            /// <summary>
+            /// Mijenja podatke postojećeg djelatnika u bazi
+            /// </summary>
+            /// <remarks>
+            /// Primjer upita:
+            ///
+            ///    PUT api/v1/Djelatnik/1
+            ///
+            /// {
+            ///  "id": 0,
+            ///  "ime": baton,
+            ///  "prezime": karoic,
+            ///  "oib": 9384958675,
+            ///  "kontakt": email
+            ///  "jedinstvenibroj": 8247
+            ///  "vrsta_djelatnika": Pilot
+            /// }
+            ///
+            /// </remarks>
+            /// <param name="id">id djelatnika koji se mijenja</param>  
+            /// <returns>Svi poslani podaci od djelatnika</returns>
+            /// <response code="200">Sve je u redu</response>
+            /// <response code="204">Nema u bazi djelatnika kojeg želimo promijeniti</response>
+            /// <response code="415">Nismo poslali JSON</response> 
+            /// <response code="503">Na azure treba dodati IP u firewall</response> 
+
 
         }
         [HttpPut]
@@ -176,6 +245,21 @@ namespace InfinityBeyondControllers.Controllers
 
 
         }
+        /// <summary>
+        /// Briše djelatnike iz baze
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    DELETE api/v1/Djelatnik/1
+        ///    
+        /// </remarks>
+        /// <param name="id">id djelatnika koji se briše</param>  
+        /// <returns>Odgovor da li je obrisano ili ne</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="204">Nema u bazi djelatnika kojeg želimo obrisati</response>
+        /// <response code="415">Nismo poslali JSON</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
 
         [HttpDelete]
         [Route("{sifra:int}")]

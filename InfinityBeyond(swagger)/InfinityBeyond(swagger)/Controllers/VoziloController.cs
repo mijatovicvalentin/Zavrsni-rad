@@ -24,6 +24,20 @@ namespace InfinityBeyondControllers.Controllers
         }
 
 
+        /// <summary>
+        /// Dohvaća sva Vozila iz baze
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    GET api/v1/Vozilo   
+        ///
+        /// </remarks>
+        /// <returns>Vozila u bazi</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -70,6 +84,29 @@ namespace InfinityBeyondControllers.Controllers
 
 
         }
+        /// <summary>
+        /// Mijenja podatke postojećeg vozila u bazi
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    PUT api/v1/Vozilo/1
+        ///
+        /// {
+        ///  "id": 0,
+        ///  "naziv": MirianRover,
+        ///  "cijena": 9237.99,
+        ///  "datum_proizvodnje": 05.02.2000,
+        ///  "djelatnik": 1,
+        ///  "tezina": 9826kg,
+        /// }
+        /// </remarks>
+        /// <param name="id">id vozila koji se mijenja</param>  
+        /// <returns>Svi poslani podaci od vozila</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="204">Nema u bazi vozila kojeg želimo promijeniti</response>
+        /// <response code="415">Nismo poslali JSON</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
 
         [HttpPost]
         public IActionResult Post(VoziloDTO VoziloDTO)
@@ -123,7 +160,30 @@ namespace InfinityBeyondControllers.Controllers
             }
 
         }
-
+        /// <summary>
+        /// Mijenja podatke postojećeg vozila u bazi
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    PUT api/v1/Vozilo/1
+        ///
+        /// {
+        ///  "id": 0,
+        ///  "naziv": MirianRover,
+        ///  "cijena": 9237.99,
+        ///  "datum_proizvodnje": 05.02.2000,
+        ///  "djelatnik": 1,
+        ///  "tezina": 9826kg,
+        /// }
+        ///
+        /// </remarks>
+        /// <param name="id">id vozila koji se mijenja</param>  
+        /// <returns>Svi poslani podaci od vozila</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="204">Nema u bazi vozila kojeg želimo promijeniti</response>
+        /// <response code="415">Nismo poslali JSON</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
         [HttpPut]
         [Route("{sifra:int}")]
         public IActionResult Put(int sifra, VoziloDTO voziloDTO)
@@ -175,8 +235,22 @@ namespace InfinityBeyondControllers.Controllers
 
 
         }
-
-            [HttpDelete]
+        /// <summary>
+        /// Briše vozilo iz baze
+        /// </summary>
+        /// <remarks>
+        /// Primjer upita:
+        ///
+        ///    DELETE api/v1/Vozilo/1
+        ///    
+        /// </remarks>
+        /// <param name="id">id vozila koji se briše</param>  
+        /// <returns>Odgovor da li je obrisano ili ne</returns>
+        /// <response code="200">Sve je u redu</response>
+        /// <response code="204">Nema u bazi vozila kojeg želimo obrisati</response>
+        /// <response code="415">Nismo poslali JSON</response> 
+        /// <response code="503">Na azure treba dodati IP u firewall</response> 
+        [HttpDelete]
             [Route("{sifra:int}")]
             [Produces("application/json")]
             public IActionResult Delete(int sifra)
