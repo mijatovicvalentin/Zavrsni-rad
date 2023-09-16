@@ -5,12 +5,12 @@ namespace InfinityBeyondControllers.Models.DTO
     public class DjelatnikDTO
     {
         public int id { get; set; }
-        public int? ime { get; set; }
-        public int? prezime { get; set; }
-        public int? oib { get; set; }
-        public int? kontakt { get; set; }
+        public string? ime { get; set; }
+        public string? prezime { get; set; }
+        public string oib { get; set; }
+        public string? kontakt { get; set; }
         public int? jedinstvenibroj { get; set; }
-        public vrsta_djelatnika? vrsta_djelatnika { get; set; }
+        public Vrsta_djelatnika? vrsta_djelatnika { get; set; }
 
 
     }
