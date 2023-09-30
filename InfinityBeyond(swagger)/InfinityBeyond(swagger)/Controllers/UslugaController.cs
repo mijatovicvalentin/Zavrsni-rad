@@ -185,16 +185,16 @@ namespace InfinityBeyondControllers.Controllers
         /// <response code="204">Nema u bazi usluge kojeg želimo obrisati</response>
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
-
         [HttpDelete]
         [Route("{sifra:int}")]
         [Produces("application/json")]
         public IActionResult Delete(int sifra)
         {
-            if (sifra == 0)
+            if (sifra <= 0)
             {
                 return BadRequest();
             }
+
             try
             {
                 var uslugaBaza = _context.Usluga.Find(sifra);
@@ -202,11 +202,13 @@ namespace InfinityBeyondControllers.Controllers
                 {
                     return BadRequest();
                 }
+                //napisati provjeru moze li se obrisati
 
                 _context.Usluga.Remove(uslugaBaza);
                 _context.SaveChanges();
 
-                return new JsonResult("{\"poruka\":\"obrisano\"}");
+                return new JsonResult("{\"poruka\":\"Obrisano\"}");
+
             }
             catch (Exception ex)
             {

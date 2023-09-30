@@ -175,7 +175,6 @@ namespace InfinityBeyondControllers.Controllers
         /// <response code="204">Nema u bazi smjera kojeg želimo obrisati</response>
         /// <response code="415">Nismo poslali JSON</response> 
         /// <response code="503">Na azure treba dodati IP u firewall</response> 
-
         [HttpDelete]
         [Route("{sifra:int}")]
         [Produces("application/json")]
@@ -188,13 +187,14 @@ namespace InfinityBeyondControllers.Controllers
 
             try
             {
-                var vrste_djelatnikaBaza = _context.Vrsta_Djelatnika.Find(sifra);
-                if (vrste_djelatnikaBaza == null)
+                var vdbaza = _context.Vrsta_Djelatnika.Find(sifra);
+                if (vdbaza == null)
                 {
                     return BadRequest();
                 }
+                //napisati provjeru moze li se obrisati
 
-                _context.Vrsta_Djelatnika.Remove(vrste_djelatnikaBaza);
+                _context.Vrsta_Djelatnika.Remove(vdbaza);
                 _context.SaveChanges();
 
                 return new JsonResult("{\"poruka\":\"Obrisano\"}");
