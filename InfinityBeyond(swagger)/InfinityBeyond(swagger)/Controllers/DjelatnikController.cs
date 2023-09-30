@@ -122,7 +122,7 @@ namespace InfinityBeyondControllers.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (djelatnikDTO.id <= 0)
+            if (djelatnikDTO.vd_sifra <= 0)
             {
                 return BadRequest(ModelState);
             }
@@ -136,6 +136,7 @@ namespace InfinityBeyondControllers.Controllers
                 {
                     return BadRequest(ModelState);
                 }
+                _logger.LogError("Vrsta djelatnika: " +  vrsta_Djelatnika.Naziv);
 
                 Djelatnik d = new()
                 {
@@ -210,7 +211,7 @@ namespace InfinityBeyondControllers.Controllers
 
             try
             {
-                var vrstedjelatnika = _context.Vrsta_Djelatnika.Find(djelatnikDTO.id);
+                var vrstedjelatnika = _context.Vrsta_Djelatnika.Find(djelatnikDTO.vd_sifra);
 
                 if (vrstedjelatnika == null)
                 {

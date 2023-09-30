@@ -33,6 +33,17 @@ builder.Services.AddSwaggerGen(sgo => { // sgo je instanca klase SwaggerGenOptio
 
 });
 
+builder.Services.AddCors(opcije =>
+{
+
+
+    opcije.AddPolicy("CorsPolicy",
+        builder =>
+        builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+
+
+});
 
 // dodavanje baze podataka
 builder.Services.AddDbContext<InfinityBeyondContext>(o =>
@@ -62,7 +73,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
+app.UseCors("CorsPolicy");
 app.MapControllers();
 app.UseStaticFiles();
 app.Run();

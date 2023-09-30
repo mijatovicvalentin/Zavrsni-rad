@@ -117,7 +117,7 @@ namespace InfinityBeyondControllers.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (VoziloDTO.id <= 0)
+            if (VoziloDTO.djelatnik_sifra <= 0)
             {
                 return BadRequest(ModelState);
             }
@@ -199,7 +199,7 @@ namespace InfinityBeyondControllers.Controllers
 
             try
             {
-                var djelatnika = _context.Djelatnik.Find(voziloDTO.id);
+                var djelatnika = _context.Djelatnik.Find(voziloDTO.djelatnik_sifra);
 
                 if (djelatnika == null)
                 {
