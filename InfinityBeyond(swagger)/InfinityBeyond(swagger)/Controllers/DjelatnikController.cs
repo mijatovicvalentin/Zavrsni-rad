@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;
+using Microsoft.Data.SqlClient;
+
 
 namespace InfinityBeyondControllers.Controllers
 {
@@ -274,15 +277,16 @@ namespace InfinityBeyondControllers.Controllers
                 return BadRequest();
             }
 
-            var DjelatnikBaza = _context.Djelatnik.Find(sifra);
-            if (DjelatnikBaza == null)
-            {
-                return BadRequest();
-            }
-
             try
             {
-                _context.Djelatnik.Remove(DjelatnikBaza);
+                var djelatnikBaza = _context.Djelatnik.Find(sifra);
+                if (djelatnikBaza == null)
+                {
+                    return BadRequest();
+                }
+                //napisati provjeru moze li se obrisati
+
+                _context.Djelatnik.Remove(djelatnikBaza);
                 _context.SaveChanges();
 
                 return new JsonResult("{\"poruka\":\"Obrisano\"}");
@@ -291,8 +295,19 @@ namespace InfinityBeyondControllers.Controllers
             catch (Exception ex)
             {
 
-                return new JsonResult("{\"poruka\":\"Ne može se obrisati\"}");
+                try
+                {
+                    SqlException sqle = (SqlException)ex;
+                    return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                                  sqle);
+                }
+                catch (Exception e)
+                {
 
+                }
+
+                return StatusCode(StatusCodes.Status503ServiceUnavailable,
+                                  ex);
             }
         }
 

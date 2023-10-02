@@ -1,10 +1,12 @@
-﻿using InfinityBeyondSwagger;
-using InfinityBeyondSwagger.Data;
+﻿using InfinityBeyondSwagger.Data;
 using InfinityBeyondSwagger.Models;
+using InfinityBeyondSwagger.Models.DTO;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal;
-using System.Linq.Expressions;
+using Microsoft.Data.SqlClient;
 
 namespace InfinityBeyondControllers.Controllers
 {
@@ -151,9 +153,9 @@ namespace InfinityBeyondControllers.Controllers
                     return BadRequest();
                 }
                 uslugaBaza.Naziv = usluga.Naziv;
-                uslugaBaza.Destinacija = usluga.Destinacija;
+                uslugaBaza.destinacija = usluga.destinacija;
                 uslugaBaza.nacin_placanja = usluga.nacin_placanja;
-                uslugaBaza.Cijena = usluga.Cijena;
+                uslugaBaza.cijena = usluga.cijena;
                 uslugaBaza.broj_mjesta = usluga.broj_mjesta;
 
                 _context.Usluga.Update(uslugaBaza);
@@ -212,21 +214,9 @@ namespace InfinityBeyondControllers.Controllers
             }
             catch (Exception ex)
             {
-
-                try
-                {
-                    SqlException sqle = (SqlException)ex;
-                    return StatusCode(StatusCodes.Status503ServiceUnavailable,
-                                  sqle);
-                }
-                catch (Exception e)
-                {
-
-                }
-
-                return StatusCode(StatusCodes.Status503ServiceUnavailable,
-                                  ex);
+                return BadRequest();
             }
+ 
         }
     }
 }
