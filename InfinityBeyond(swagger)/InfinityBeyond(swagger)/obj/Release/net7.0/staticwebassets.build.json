@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "ZX288y3a0DCI6JgYSli5jMcBXwFfo8/0rzlk2P2b0do=",
+  "Source": "InfinityBeyondSwagger",
+  "BasePath": "_content/InfinityBeyondSwagger",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "InfinityBeyondSwagger\\wwwroot",
+      "Source": "InfinityBeyondSwagger",
+      "ContentRoot": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\",
+      "BasePath": "_content/InfinityBeyondSwagger",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\index.html",
+      "SourceId": "InfinityBeyondSwagger",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\",
+      "BasePath": "_content/InfinityBeyondSwagger",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

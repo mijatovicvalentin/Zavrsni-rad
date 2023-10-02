@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InfinityBeyondSwagger</name>
+    </assembly>
+    <members>
+        <member name="M:InfinityBeyondControllers.Controllers.DjelatnikController.Get">
+             <summary>
+             Dohvaća sve djelatnike iz baze
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                GET api/v1/Djelatnik
+            
+             </remarks>
+             <returns>djelatnike u bazi</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.DjelatnikController.Post(InfinityBeyondSwagger.Models.DTO.DjelatnikDTO)">
+             <summary>
+             Mijenja podatke postojećeg djelatnika u bazi
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                PUT api/v1/Djelatnik/1
+            
+             {
+              "id": 0,
+              "ime": baton,
+              "prezime": karoic,
+              "oib": 9384958675,
+              "kontakt": email
+              "jedinstvenibroj": 8247
+              "vrsta_djelatnika": Pilot
+             }
+            
+             </remarks>
+             <param name="id">id djelatnika koji se mijenja</param>  
+             <returns>Svi poslani podaci od korisnika</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi Djelatnika kojeg želimo promijeniti</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.DjelatnikController.Put(System.Int32,InfinityBeyondSwagger.Models.DTO.DjelatnikDTO)">
+             <summary>
+             Mijenja podatke postojećeg djelatnika u bazi
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                PUT api/v1/Djelatnik/1
+            
+             {
+              "id": 0,
+              "ime": baton,
+              "prezime": karoic,
+              "oib": 9384958675,
+              "kontakt": email
+              "jedinstvenibroj": 8247
+              "vrsta_djelatnika": Pilot
+             }
+            
+             </remarks>
+             <param name="id">id djelatnika koji se mijenja</param>  
+             <returns>Svi poslani podaci od djelatnika</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi djelatnika kojeg želimo promijeniti</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.DjelatnikController.Delete(System.Int32)">
+             <summary>
+             Briše djelatnike iz baze
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                DELETE api/v1/Djelatnik/1
+                
+             </remarks>
+             <param name="id">id djelatnika koji se briše</param>  
+             <returns>Odgovor da li je obrisano ili ne</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi djelatnika kojeg želimo obrisati</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.KorisnikController.Get">
+             <summary>
+             Dohvaća sve Korisnike iz baze
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                GET api/v1/Smjer
+            
+             </remarks>
+             <returns>Smjerovi u bazi</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.KorisnikController.Post(InfinityBeyondSwagger.Models.Korisnik)">
+             <summary>
+             Mijenja podatke postojećeg Korisnika u bazi
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                PUT api/v1/smjer/1
+            
+             {
+              "id": 0,
+              "ime": baton,
+              "prezime": karoic,
+              "oib": 9384958675,
+              "email": 123@gmail.com,
+             }
+            
+             </remarks>
+             <param name="id">id korisnika koji se mijenja</param>  
+             <returns>Svi poslani podaci od korisnika</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi korisnika kojeg želimo promijeniti</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.KorisnikController.Put(System.Int32,InfinityBeyondSwagger.Models.Korisnik)">
+             <summary>
+             Mijenja podatke postojećeg korisnika u bazi
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                PUT api/v1/smjer/1
+            
+             {
+              "id": 0,
+              "ime": baton,
+              "prezime": karoic,
+              "oib": 9384958675,
+              "email": 123@gmail.com,
+             }
+            
+             </remarks>
+             <param name="id">id korisnika koji se mijenja</param>  
+             <returns>Svi poslani podaci od korisnika</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi smjera kojeg želimo promijeniti</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.KorisnikController.Delete(System.Int32)">
+             <summary>
+             Briše korisnika iz baze
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                DELETE api/v1/smjer/1
+                
+             </remarks>
+             <param name="id">id korisnika koji se briše</param>  
+             <returns>Odgovor da li je obrisano ili ne</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi korisnika kojeg želimo obrisati</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.UslugaController.Get">
+             <summary>
+             Dohvaća sve Usluge iz baze
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                GET api/v1/Smjer
+            
+             </remarks>
+             <returns>usluge u bazi</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.UslugaController.Post(InfinityBeyondSwagger.Models.Usluga)">
+             <summary>
+             Mijenja podatke postojeće usluge u bazi
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                PUT api/v1/smjer/1
+            
+             {
+              "id": 0,
+              "destinacija": Mars
+              "nacin_placanja: 1
+              "cijena": 937498.33
+              "broj_mjesta": 12
+             }
+            
+             </remarks>
+             <param name="id">id usluge koja se mijenja</param>  
+             <returns>Svi poslani podaci od usluge</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi korisnika kojeg želimo promijeniti</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.UslugaController.Put(System.Int32,InfinityBeyondSwagger.Models.Usluga)">
+             <summary>
+             Mijenja podatke postojeće usluge u bazi
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                PUT api/v1/smjer/1
+            
+            
+            {
+              "id": 0,
+              "destinacija": Mars
+              "nacin_placanja: 1
+              "cijena": 937498.33
+              "broj_mjesta": 12
+             }
+            
+             </remarks>
+             <param name="id">id usluge koji se mijenja</param>  
+             <returns>Svi poslani podaci od smjera</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi usluge kojeg želimo promijeniti</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.UslugaController.Delete(System.Int32)">
+             <summary>
+             Briše uslugu iz baze
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                DELETE api/v1/smjer/1
+                
+             </remarks>
+             <param name="id">id usluge koji se briše</param>  
+             <returns>Odgovor da li je obrisano ili ne</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi usluge kojeg želimo obrisati</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.VoziloController.Get">
+             <summary>
+             Dohvaća sva Vozila iz baze
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                GET api/v1/Vozilo   
+            
+             </remarks>
+             <returns>Vozila u bazi</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.VoziloController.Post(InfinityBeyondSwagger.Models.DTO.VoziloDTO)">
+             <summary>
+             Mijenja podatke postojećeg vozila u bazi
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                PUT api/v1/Vozilo/1
+            
+             {
+              "id": 0,
+              "naziv": MirianRover,
+              "cijena": 9237.99,
+              "datum_proizvodnje": 05.02.2000,
+              "djelatnik": 1,
+              "tezina": 9826kg,
+             }
+             </remarks>
+             <param name="id">id vozila koji se mijenja</param>  
+             <returns>Svi poslani podaci od vozila</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi vozila kojeg želimo promijeniti</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.VoziloController.Put(System.Int32,InfinityBeyondSwagger.Models.DTO.VoziloDTO)">
+             <summary>
+             Mijenja podatke postojećeg vozila u bazi
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                PUT api/v1/Vozilo/1
+            
+             {
+              "id": 0,
+              "naziv": MirianRover,
+              "cijena": 9237.99,
+              "datum_proizvodnje": 05.02.2000,
+              "djelatnik": 1,
+              "tezina": 9826kg,
+             }
+            
+             </remarks>
+             <param name="id">id vozila koji se mijenja</param>  
+             <returns>Svi poslani podaci od vozila</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi vozila kojeg želimo promijeniti</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.VoziloController.Delete(System.Int32)">
+             <summary>
+             Briše vozilo iz baze
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                DELETE api/v1/Vozilo/1
+                
+             </remarks>
+             <param name="id">id vozila koji se briše</param>  
+             <returns>Odgovor da li je obrisano ili ne</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi vozila kojeg želimo obrisati</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.Vrsta_djelatnikaController.Get">
+             <summary>
+             Dohvaća sve vrste djelatnika iz baze
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                GET api/v1/Smjer
+            
+             </remarks>
+             <returns>Smjerovi u bazi</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="400">Zahtjev nije valjan (BadRequest)</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.Vrsta_djelatnikaController.Post(InfinityBeyondSwagger.Models.Vrsta_djelatnika)">
+             <summary>
+             Mijenja podatke postojeće vrste djelatnika u bazi
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                PUT api/v1/djelatnik/1
+            
+             {
+              "id": 0,
+              "naziv": Pilot
+            
+             }
+             </remarks>
+             <param name="id">id vrste djelatnika koji se mijenja</param>  
+             <returns>Svi poslani podaci od vrste djelatnika</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi djelatnika kojeg želimo promijeniti</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.Vrsta_djelatnikaController.Put(System.Int32,InfinityBeyondSwagger.Models.Vrsta_djelatnika)">
+             <summary>
+             Mijenja podatke postojeće vrste djelatnika u bazi
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                PUT api/v1/smjer/1
+            
+             {
+              "id": 0,
+              "naziv": Pilot
+            
+             }
+            
+             </remarks>
+             <param name="id">id vrste djelatnika koji se mijenja</param>  
+             <returns>Svi poslani podaci od vrtse djelatnika</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi smjera kojeg želimo promijeniti</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+        <member name="M:InfinityBeyondControllers.Controllers.Vrsta_djelatnikaController.Delete(System.Int32)">
+             <summary>
+             Briše vrstu djelatnika iz baze
+             </summary>
+             <remarks>
+             Primjer upita:
+            
+                DELETE api/v1/smjer/1
+                
+             </remarks>
+             <param name="id">id vrste djelatnika koji se briše</param>  
+             <returns>Odgovor da li je obrisano ili ne</returns>
+             <response code="200">Sve je u redu</response>
+             <response code="204">Nema u bazi smjera kojeg želimo obrisati</response>
+             <response code="415">Nismo poslali JSON</response> 
+             <response code="503">Na azure treba dodati IP u firewall</response> 
+        </member>
+    </members>
+</doc>
