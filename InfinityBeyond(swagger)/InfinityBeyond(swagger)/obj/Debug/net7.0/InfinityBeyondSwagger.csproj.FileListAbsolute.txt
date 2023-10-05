@@ -85,3 +85,4 @@ C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyond(swagger)\InfinityBeyond(swag
 C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyond(swagger)\InfinityBeyond(swagger)\obj\Debug\net7.0\InfinityBeyondSwagger.pdb
 C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyond(swagger)\InfinityBeyond(swagger)\obj\Debug\net7.0\InfinityBeyondSwagger.genruntimeconfig.cache
 C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyond(swagger)\InfinityBeyond(swagger)\obj\Debug\net7.0\ref\InfinityBeyondSwagger.dll
+C:\Users\mijat\Documents\Zavrsni-rad\InfinityBeyond(swagger)\InfinityBeyond(swagger)\bin\Debug\net7.0\InfinityBeyondSwagger.staticwebassets.runtime.json

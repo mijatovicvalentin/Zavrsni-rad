@@ -1,8 +1,76 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\asset-manifest.json",
+      "PackagePath": "staticwebassets\\asset-manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
       "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\logo192.png",
+      "PackagePath": "staticwebassets\\logo192.png"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\logo512.png",
+      "PackagePath": "staticwebassets\\logo512.png"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\manifest.json",
+      "PackagePath": "staticwebassets\\manifest.json"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\robots.txt",
+      "PackagePath": "staticwebassets\\robots.txt"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\service-worker.js",
+      "PackagePath": "staticwebassets\\service-worker.js"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\service-worker.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\service-worker.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\service-worker.js.map",
+      "PackagePath": "staticwebassets\\service-worker.js.map"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\static\\css\\main.073c9b0a.css",
+      "PackagePath": "staticwebassets\\static\\css\\main.073c9b0a.css"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\static\\css\\main.073c9b0a.css.map",
+      "PackagePath": "staticwebassets\\static\\css\\main.073c9b0a.css.map"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\static\\js\\787.b3f8a33d.chunk.js",
+      "PackagePath": "staticwebassets\\static\\js\\787.b3f8a33d.chunk.js"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\static\\js\\787.b3f8a33d.chunk.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\787.b3f8a33d.chunk.js.map"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\static\\js\\main.b9223c51.js",
+      "PackagePath": "staticwebassets\\static\\js\\main.b9223c51.js"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\static\\js\\main.b9223c51.js.LICENSE.txt",
+      "PackagePath": "staticwebassets\\static\\js\\main.b9223c51.js.LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\static\\js\\main.b9223c51.js.map",
+      "PackagePath": "staticwebassets\\static\\js\\main.b9223c51.js.map"
+    },
+    {
+      "Id": "C:\\Users\\mijat\\Documents\\Zavrsni-rad\\InfinityBeyond(swagger)\\InfinityBeyond(swagger)\\wwwroot\\static\\media\\logo.103b5fa18196d5665a7e12318285c916.svg",
+      "PackagePath": "staticwebassets\\static\\media\\logo.103b5fa18196d5665a7e12318285c916.svg"
     },
     {
       "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.InfinityBeyondSwagger.Microsoft.AspNetCore.StaticWebAssets.props",
