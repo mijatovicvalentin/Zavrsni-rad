@@ -38,7 +38,7 @@ create table usluga(
 	id int not null primary key identity(1,1),
 	Naziv varchar(50),
 	destinacija varchar(50),
-	nacin_placanja bit,
+	nacin_placanja int,
 	cijena decimal (18,2),
 	broj_mjesta int,
 );
