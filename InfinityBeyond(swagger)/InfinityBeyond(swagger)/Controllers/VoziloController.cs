@@ -68,7 +68,7 @@ namespace InfinityBeyondControllers.Controllers
                         cijena = v.cijena,
                         datum_proizvodnje = v.datum_proizvodnje,
 
-                        djelatnik = v.djelatnik,
+                        djelatnik = v.djelatnik.ime+" " + v.djelatnik.prezime ,
                         tezina = v.tezina
 
                     });
